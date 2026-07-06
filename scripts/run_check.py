@@ -3,15 +3,17 @@ Run an LCA against an imported mock case study and check it against
 expected.json in the same case study folder.
 
 Usage:
-    python scripts/run_check.py <project_name> <db_name> <method_name> \
-        <impact_category> <reference_product_name> <expected_json_path>
+    python scripts/run_check.py <bw_dir> <project_name> <db_name> \\
+        <method_name> <impact_category> <reference_product_name> \\
+        <expected_json_path>
 """
 import os
 import sys
 import json
 
-def run_and_check(project_name, db_name, method_name, impact_category,
+def run_and_check(bw_dir, project_name, db_name, method_name, impact_category,
                    product_name, expected_path):
+    os.environ["BRIGHTWAY2_DIR"] = bw_dir
     import bw2data as bd
     bd.projects.set_current(project_name)
     import bw2calc as bc

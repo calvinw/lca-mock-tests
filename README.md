@@ -54,12 +54,14 @@ pip install olca-schema bw2data bw2calc bw2io --break-system-packages
 python case_studies/mock_widget/build.py
 # -> writes case_studies/mock_widget/mock_lca.zip
 
-# Import into a Brightway project
+# Import into a Brightway project (writes Brightway's data dir to
+# case_studies/mock_widget/.bw_project by default)
 python scripts/import_to_brightway.py \
     case_studies/mock_widget/mock_lca.zip "mock background" mock_lca_test
 
 # Run the LCA and check it against the hand-calculated expected value
-python scripts/run_check.py mock_lca_test "mock background" \
+python scripts/run_check.py \
+    case_studies/mock_widget/.bw_project mock_lca_test "mock background" \
     "Mock LCIA Method" "Mock GWP" "Mock Widget" \
     case_studies/mock_widget/expected.json
 ```

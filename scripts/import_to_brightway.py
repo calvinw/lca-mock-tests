@@ -13,6 +13,7 @@ import shutil
 def import_jsonld(zip_path, db_name, project_name, bw_dir=None):
     if bw_dir is None:
         bw_dir = os.path.join(os.path.dirname(zip_path), ".bw_project")
+    os.makedirs(bw_dir, exist_ok=True)
     os.environ["BRIGHTWAY2_DIR"] = bw_dir
 
     extract_dir = os.path.join(os.path.dirname(zip_path), "_extracted")
@@ -53,5 +54,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print(__doc__)
         sys.exit(1)
-    import_jsonld(sys.argv[1], sys.argv[2], sys.argv[3])
-    print("Done.")
+    used_bw_dir = import_jsonld(sys.argv[1], sys.argv[2], sys.argv[3])
+    print(f"Done. BRIGHTWAY2_DIR used: {used_bw_dir}")

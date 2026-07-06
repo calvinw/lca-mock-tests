@@ -129,7 +129,7 @@ method = o.ImpactMethod(
 )
 
 # ---- Write zip ----
-outdir = "/home/claude/mock_lca"
+outdir = os.path.dirname(os.path.abspath(__file__))
 zpath = os.path.join(outdir, "mock_lca.zip")
 if os.path.exists(zpath):
     os.remove(zpath)
