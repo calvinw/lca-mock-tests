@@ -34,18 +34,31 @@ been run manually, not wired into CI, and only cover the single linear case.
       `import_to_brightway.py` + `run_check.py` in one step, reading the
       reference product / method name / impact category from metadata now
       recorded directly in each `expected.json`.
-- [x] Published a GitHub Release per case study (`mock_widget-v1`,
-      `mock_cotton_fiber-v1`, `mock_polyester_tshirt-v1`,
-      `mock_wool_yarn-v1`), each with that case study's zip attached as a
-      downloadable asset, built from the exact committed `olca_ld/`
-      directory and re-verified before publishing. Asset is named after
-      the case study (`mock_widget.zip`, `mock_cotton_fiber.zip`, etc.),
-      not the generic `mock_lca.zip` filename `make release` produces
-      locally — rename before `gh release upload` if cutting a new
-      version. Release notes bodies are intentionally left empty. Note:
-      GitHub's automatic "Source code (zip/tar.gz)" links still appear on
-      every tag-based release regardless — that's generated from the tag
-      itself and can't be suppressed per-release via `gh`/the API.
+- [x] Published a GitHub Release per case study, each with that case
+      study's zip attached as a downloadable asset, built from the exact
+      committed `olca_ld/` directory and re-verified before publishing.
+      Asset is named after the case study (`mock_widget.zip`,
+      `mock_cotton_fiber.zip`, etc.), not the generic `mock_lca.zip`
+      filename `make release` produces locally — rename before `gh
+      release upload` if cutting a new version. Release notes bodies are
+      intentionally left empty. Note: GitHub's automatic "Source code
+      (zip/tar.gz)" links still appear on every tag-based release
+      regardless — that's generated from the tag itself and can't be
+      suppressed per-release via `gh`/the API. Current releases:
+      `mock_widget-v1`, `mock_cotton_fiber-v2`, `mock_polyester_tshirt-v2`,
+      `mock_wool_yarn-v2`.
+- [x] `mock_cotton_fiber`, `mock_polyester_tshirt`, and `mock_wool_yarn`
+      switched from invented round-number CFs (CF=1, CF=10) to the real
+      TRACI v2.1 characterization factors used in each one's source recipe
+      card (CH4=25.0, N2O=298.0, NH3=0.1186), so the mock database's
+      numbers correspond to the real teaching material rather than an
+      arbitrary substitute. `mock_widget` is unaffected — it isn't modeled
+      on any real recipe card, so it keeps CF=1/CF=10.
+      `expected.json` recalculated by hand (calculator, not mental
+      arithmetic, since NH3's CF isn't round) and reverified for all three.
+      This obsoleted their original `-v1` releases; those were deleted
+      (both the GitHub Release and the underlying git tag, local and
+      remote) and replaced with `-v2`, which carry the updated CFs.
 
 Note: none of the above is the pytest/GitHub-Actions CI suite described in
 Phase 1 below — checking still happens by running `make check`/`make
