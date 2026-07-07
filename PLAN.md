@@ -8,6 +8,42 @@ breakdown, in both engines. The scripts that did this are generalized into
 `scripts/import_to_brightway.py` and `scripts/run_check.py`, but have only
 been run manually, not wired into CI, and only cover the single linear case.
 
+## Done since initial commit
+
+- [x] Added three more simple linear-chain case studies —
+      `mock_cotton_fiber` (2-process, two impact categories sharing a
+      common emission), `mock_polyester_tshirt` (3-process, compound
+      scaling), `mock_wool_yarn` (2-process, >1.0 scaling factor). Each
+      mirrors the topology/teaching point of a real-data case study from
+      the `life-cycle-assessment-mcp` repo, rebuilt with round numbers and
+      trivial CFs. All four case studies (including `mock_widget`) verified
+      manually: 0 unlinked exchanges on import, bw2calc score matches
+      `expected.json` exactly. These are still single linear chains, same
+      shape as `mock_widget` — none of this is the foreground-after-background
+      split that Phase 2 below still needs.
+- [x] `build.py` now writes an expanded, checked-in `olca_ld/` JSON-LD
+      directory (via `scripts/ld_dir.py`) instead of writing a zip directly
+      — this is the browsable source of truth for each case study's
+      database structure. `mock_lca.zip` is a regenerate-on-demand build
+      artifact (`scripts/make_release.py`), gitignored, not committed.
+- [x] Added `pyproject.toml` + `uv.lock` (dependency management via `uv`)
+      and a `Makefile` (`build`/`release`/`check`/`clean` targets per case
+      study via `CASE=name`, plus `all`/`all-build`/`all-release`/
+      `all-check`/`all-clean` looping over every case study).
+- [x] Added `scripts/check_case_study.py`, which runs
+      `import_to_brightway.py` + `run_check.py` in one step, reading the
+      reference product / method name / impact category from metadata now
+      recorded directly in each `expected.json`.
+- [x] Published a GitHub Release per case study (`mock_widget-v1`,
+      `mock_cotton_fiber-v1`, `mock_polyester_tshirt-v1`,
+      `mock_wool_yarn-v1`), each with that case study's `mock_lca.zip`
+      attached as a downloadable asset, built from the exact committed
+      `olca_ld/` directory and re-verified before publishing.
+
+Note: none of the above is the pytest/GitHub-Actions CI suite described in
+Phase 1 below — checking still happens by running `make check`/`make
+all-check` by hand. Phase 1 is still not started.
+
 Everything below is prioritized; do Phase 1 before Phase 2, etc., since
 later phases depend on infrastructure earlier phases build.
 
