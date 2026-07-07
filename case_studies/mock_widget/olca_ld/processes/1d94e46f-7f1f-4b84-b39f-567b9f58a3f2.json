@@ -1,0 +1,57 @@
+{
+  "@type": "Process",
+  "@id": "1d94e46f-7f1f-4b84-b39f-567b9f58a3f2",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "f8cdf1bb-22dd-4dd7-878c-8695b0f8ac50",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock Transport service"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "0dea4ed8-bb6b-4049-b2b4-b2c413ef2180",
+        "name": "tkm"
+      }
+    },
+    {
+      "amount": 0.1,
+      "flow": {
+        "@type": "Flow",
+        "@id": "7bfb8060-52b0-4510-8e6c-a0548296eb91",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-07T03:29:30.749421+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "6fdabf13-be05-4156-9e0c-15a0f3adfdf5",
+    "name": "GLO"
+  },
+  "name": "Mock Transport service",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

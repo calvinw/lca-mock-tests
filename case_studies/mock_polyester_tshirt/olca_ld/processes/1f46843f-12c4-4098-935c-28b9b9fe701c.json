@@ -1,0 +1,78 @@
+{
+  "@type": "Process",
+  "@id": "1f46843f-12c4-4098-935c-28b9b9fe701c",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "77292b75-c81a-4b03-9e11-eb7875098d98",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock Crude oil"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.2,
+      "flow": {
+        "@type": "Flow",
+        "@id": "b66d75ee-29c1-4486-8185-16f12f32d1c2",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.1,
+      "flow": {
+        "@type": "Flow",
+        "@id": "25c838d7-dc4f-4682-98a2-50c044f6cbf0",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CH4"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-07T03:29:30.696768+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "51161682-33e8-459b-8159-f265f6470300",
+    "name": "GLO"
+  },
+  "name": "Mock Oil extraction",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

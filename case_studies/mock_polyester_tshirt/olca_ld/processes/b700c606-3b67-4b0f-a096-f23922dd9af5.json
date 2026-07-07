@@ -1,0 +1,83 @@
+{
+  "@type": "Process",
+  "@id": "b700c606-3b67-4b0f-a096-f23922dd9af5",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "ecd74891-14db-451f-b890-7abd7c4cffb2",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock T-shirt"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+        "name": "unit"
+      }
+    },
+    {
+      "amount": 0.2,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "ff00639c-566f-4059-8755-1c9022692116",
+        "name": "Mock Polyester fiber production"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "fca43ea8-1454-417c-87fa-008332dc9ecb",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock Polyester fiber"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "b66d75ee-29c1-4486-8185-16f12f32d1c2",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-07T03:29:30.696783+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "51161682-33e8-459b-8159-f265f6470300",
+    "name": "GLO"
+  },
+  "name": "Mock T-shirt assembly",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

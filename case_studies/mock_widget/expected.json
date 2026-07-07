@@ -1,4 +1,7 @@
 {
+  "reference_product": "Mock Widget",
+  "method_name": "Mock LCIA Method",
+  "impact_category": "Mock GWP",
   "description": "Hand-calculated, confirmed identical in bw2calc and openLCA",
   "scaling_vector": {
     "Mock Electricity production": 6.0,

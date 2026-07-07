@@ -1,0 +1,125 @@
+{
+  "@type": "Process",
+  "@id": "cbf24961-e82c-4cf2-897e-9c0a4dfce2f5",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "61286f64-3408-4400-a0a2-ee2c41a9d16a",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock Cotton fiber"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.2,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "700e6a4d-d58b-478f-915d-15535175c011",
+        "name": "Mock Fertilizer production"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "1f491c9d-3719-4778-912c-597495277ad3",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock N-fertilizer"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "398071aa-459a-45ee-bb3c-ef15eaf0fd84",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.1,
+      "flow": {
+        "@type": "Flow",
+        "@id": "6864aba9-2cba-4501-87d4-4ad82f64956c",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock N2O"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.1,
+      "flow": {
+        "@type": "Flow",
+        "@id": "693fa80c-6d68-4a73-a51d-600cf975309c",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock NH3"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-07T03:29:30.644341+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "428ad5f4-423f-4429-baa7-ba094deda8bc",
+    "name": "GLO"
+  },
+  "name": "Mock Cotton farming",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

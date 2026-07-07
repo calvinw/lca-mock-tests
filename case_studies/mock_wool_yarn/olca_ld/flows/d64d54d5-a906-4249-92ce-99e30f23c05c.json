@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "d64d54d5-a906-4249-92ce-99e30f23c05c",
+  "category": "Mock products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T03:29:30.802375+00:00",
+  "name": "Mock Wool yarn",
+  "version": "01.00.000"
+}

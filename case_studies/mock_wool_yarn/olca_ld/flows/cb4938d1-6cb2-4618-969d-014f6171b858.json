@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "cb4938d1-6cb2-4618-969d-014f6171b858",
+  "category": "Mock elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-07T03:29:30.802387+00:00",
+  "name": "Mock CH4",
+  "version": "01.00.000"
+}

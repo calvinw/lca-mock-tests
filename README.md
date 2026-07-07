@@ -34,47 +34,64 @@ cleanly into both engines** without a separate translation layer.
 ```
 case_studies/
   mock_widget/
-    build.py        — builds the graph + LCIA method, writes the JSON-LD zip
+    build.py         — builds the graph + LCIA method, writes olca_ld/
+    olca_ld/         — expanded, checked-in JSON-LD (flows/, processes/,
+                       lcia_categories/, lcia_methods/, unit_groups/) --
+                       this is the browsable source of truth for the
+                       database structure
     expected.json    — hand-calculated ground truth (scaling vector,
-                       inventory, impact score)
-    README.md        — gotchas hit while building this specific case,
-                       and the case's supply chain description
+                       inventory, impact score, plus the reference
+                       product/method/category names used to check it)
+    mock_lca.zip     — regenerated on demand from olca_ld/, gitignored
 scripts/
-  import_to_brightway.py  — generic JSON-LD → Brightway project importer
+  ld_dir.py                — shared helper: writes olca_schema entities to
+                              an expanded JSON-LD dir, and zips that dir
+  make_release.py          — zips a case study's olca_ld/ into mock_lca.zip
+  import_to_brightway.py   — generic JSON-LD zip → Brightway project importer
   run_check.py             — runs bw2calc against an imported case study and
                               checks the result against expected.json
+  check_case_study.py      — import_to_brightway.py + run_check.py in one
+                              step, reading metadata from expected.json
 ```
 
 ## Quick start
 
+Dependencies are managed with [`uv`](https://docs.astral.sh/uv/) via
+`pyproject.toml` — `uv sync` creates an isolated `.venv/` the first time you
+run any command below.
+
 ```bash
-pip install olca-schema bw2data bw2calc bw2io --break-system-packages
+# Build, release (zip), and check every case study
+make all
 
-# Build the JSON-LD zip for a case study
-python case_studies/mock_widget/build.py
-# -> writes case_studies/mock_widget/mock_lca.zip
+# Or work on a single case study:
+make build   CASE=mock_widget   # build.py -> writes case_studies/mock_widget/olca_ld/
+make release CASE=mock_widget   # zips olca_ld/ -> case_studies/mock_widget/mock_lca.zip
+make check   CASE=mock_widget   # imports the zip into Brightway, checks vs expected.json
+make clean   CASE=mock_widget   # removes .bw_project/, _extracted/, mock_lca.zip
+```
 
-# Import into a Brightway project (writes Brightway's data dir to
-# case_studies/mock_widget/.bw_project by default)
-python scripts/import_to_brightway.py \
-    case_studies/mock_widget/mock_lca.zip "mock background" mock_lca_test
+Equivalent raw commands (what the Makefile targets run under the hood):
 
-# Run the LCA and check it against the hand-calculated expected value
-python scripts/run_check.py \
-    case_studies/mock_widget/.bw_project mock_lca_test "mock background" \
-    "Mock LCIA Method" "Mock GWP" "Mock Widget" \
-    case_studies/mock_widget/expected.json
+```bash
+uv run python case_studies/mock_widget/build.py
+uv run python scripts/make_release.py case_studies/mock_widget
+uv run python scripts/check_case_study.py case_studies/mock_widget
 ```
 
 To test the same zip in **openLCA**: File → Import → openLCA JSON-LD Zip
-File → select the generated zip → create a product system from the
-reference process → Calculate → compare the result to `expected.json`.
+File → select `case_studies/mock_widget/mock_lca.zip` → create a product
+system from the reference process → Calculate → compare the result to
+`expected.json`.
 
 ## Current case studies
 
 | Case study | Tests |
 |---|---|
 | `mock_widget` | Basic linear chain (2 levels deep), no allocation, no loops. Sanity check for matrix solve + characterization. |
+| `mock_cotton_fiber` | 2-process chain, two impact categories at once (GWP + eutrophication) sharing a common emission (N2O). |
+| `mock_polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops. |
+| `mock_wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss) and CH4's outsized GWP contribution. |
 
 ## Known gaps (see `PLAN.md` for the full roadmap)
 

@@ -1,0 +1,16 @@
+{
+  "reference_product": "Mock T-shirt",
+  "method_name": "Mock LCIA Method",
+  "impact_category": "Mock GWP",
+  "description": "Hand-calculated. s_P3=1.0, s_P2=0.2, s_P1=0.2*1.5=0.3. CO2 total = 0.3*0.2 + 0.2*5.0 + 1.0*1.0 = 2.06. CH4 total = 0.3*0.1 = 0.03. GWP = 2.06*1 + 0.03*10 = 2.36.",
+  "scaling_vector": {
+    "Mock Oil extraction": 0.3,
+    "Mock Polyester fiber production": 0.2,
+    "Mock T-shirt assembly": 1.0
+  },
+  "inventory": {
+    "Mock CO2": 2.06,
+    "Mock CH4": 0.03
+  },
+  "score": 2.36
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "1f491c9d-3719-4778-912c-597495277ad3",
+  "category": "Mock products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T03:29:30.644157+00:00",
+  "name": "Mock N-fertilizer",
+  "version": "01.00.000"
+}

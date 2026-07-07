@@ -1,0 +1,17 @@
+{
+  "reference_product": "Mock Cotton fiber",
+  "method_name": "Mock LCIA Method",
+  "impact_category": "Mock GWP",
+  "description": "Hand-calculated. s_P1=0.2, s_P2=1.0. CO2 total = 0.2*3.0 + 1.0*1.0 = 1.6. N2O total = 0.1. NH3 total = 0.1. GWP = 1.6*1 + 0.1*10 = 2.6. EP = 0.1*1 = 0.1.",
+  "scaling_vector": {
+    "Mock Fertilizer production": 0.2,
+    "Mock Cotton farming": 1.0
+  },
+  "inventory": {
+    "Mock CO2": 1.6,
+    "Mock N2O": 0.1,
+    "Mock NH3": 0.1
+  },
+  "score": 2.6,
+  "score_note": "score is for Mock GWP (the primary/reference category run_check.py checks). Mock EP score is 0.1 — rerun run_check.py with impact_category='Mock EP' and compare against 0.1 to check the second category."
+}

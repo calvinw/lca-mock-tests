@@ -1,0 +1,10 @@
+[project]
+name = "lca-mock-tests"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "olca-schema>=2.0",
+    "bw2data>=4.0",
+    "bw2calc>=2.0",
+    "bw2io>=0.9,<0.10",
+]

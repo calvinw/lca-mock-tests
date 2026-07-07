@@ -8,44 +8,30 @@ from ld_dir import write_ld_dir
 def uid():
     return str(uuid.uuid4())
 
-# ---- Flow property / unit refs (from standard olca reference data) ----
 KG = dict(unit=units.unit_ref("kg"), prop=units.property_ref("kg"))
-KWH = dict(unit=units.unit_ref("kWh"), prop=units.property_ref("kWh"))
-TKM = dict(unit=units.unit_ref("tkm"), prop=units.property_ref("tkm"))
-UNIT = dict(unit=units.unit_ref("unit"), prop=units.property_ref("unit"))
 
 def flow_prop_factor(prop_ref):
     return o.FlowPropertyFactor(conversion_factor=1.0, flow_property=prop_ref, is_ref_flow_property=True)
 
 def make_product_flow(name, unit_kind):
-    f = o.Flow(
-        id=uid(),
-        name=name,
-        flow_type=o.FlowType.PRODUCT_FLOW,
-        category="Mock products",
-        flow_properties=[flow_prop_factor(unit_kind["prop"])],
+    return o.Flow(
+        id=uid(), name=name, flow_type=o.FlowType.PRODUCT_FLOW,
+        category="Mock products", flow_properties=[flow_prop_factor(unit_kind["prop"])],
     )
-    return f
 
 def make_elem_flow(name):
-    f = o.Flow(
-        id=uid(),
-        name=name,
-        flow_type=o.FlowType.ELEMENTARY_FLOW,
-        category="Mock elementary flows/air",
-        flow_properties=[flow_prop_factor(KG["prop"])],
+    return o.Flow(
+        id=uid(), name=name, flow_type=o.FlowType.ELEMENTARY_FLOW,
+        category="Mock elementary flows/air", flow_properties=[flow_prop_factor(KG["prop"])],
     )
-    return f
 
 # ---- Flows ----
-electricity = make_product_flow("Mock Electricity", KWH)
-steel = make_product_flow("Mock Steel", KG)
-transport = make_product_flow("Mock Transport service", TKM)
-widget = make_product_flow("Mock Widget", UNIT)
+raw_wool = make_product_flow("Mock Raw wool", KG)
+yarn = make_product_flow("Mock Wool yarn", KG)
 co2 = make_elem_flow("Mock CO2")
 ch4 = make_elem_flow("Mock CH4")
 
-flows = [electricity, steel, transport, widget, co2, ch4]
+flows = [raw_wool, yarn, co2, ch4]
 
 def ref_to(flow):
     return o.Ref(id=flow.id, ref_type=o.RefType.Flow, name=flow.name, flow_type=flow.flow_type)
@@ -74,49 +60,30 @@ def emission_exchange(flow, amount):
 GLO = o.Ref(id=uid(), ref_type=o.RefType.Location, name="GLO")
 
 # ---- Processes ----
-proc_electricity = o.Process(
-    id=uid(), name="Mock Electricity production", process_type=o.ProcessType.UNIT_PROCESS,
+proc_sheep = o.Process(
+    id=uid(), name="Mock Sheep farming", process_type=o.ProcessType.UNIT_PROCESS,
     location=GLO,
     exchanges=[
-        output_exchange(electricity, KWH, 1.0),
+        output_exchange(raw_wool, KG, 1.0),
         emission_exchange(co2, 0.5),
+        emission_exchange(ch4, 0.4),
     ],
 )
 
-proc_transport = o.Process(
-    id=uid(), name="Mock Transport service", process_type=o.ProcessType.UNIT_PROCESS,
+proc_yarn = o.Process(
+    id=uid(), name="Mock Wool yarn production", process_type=o.ProcessType.UNIT_PROCESS,
     location=GLO,
     exchanges=[
-        output_exchange(transport, TKM, 1.0),
-        emission_exchange(co2, 0.1),
+        output_exchange(yarn, KG, 1.0),
+        input_exchange(raw_wool, KG, 1.1, proc_ref(proc_sheep)),
+        emission_exchange(co2, 2.0),
     ],
 )
 
-proc_steel = o.Process(
-    id=uid(), name="Mock Steel production", process_type=o.ProcessType.UNIT_PROCESS,
-    location=GLO,
-    exchanges=[
-        output_exchange(steel, KG, 1.0),
-        input_exchange(electricity, KWH, 2.0, proc_ref(proc_electricity)),
-        emission_exchange(co2, 1.0),
-    ],
-)
-
-proc_widget = o.Process(
-    id=uid(), name="Mock Widget production", process_type=o.ProcessType.UNIT_PROCESS,
-    location=GLO,
-    exchanges=[
-        output_exchange(widget, UNIT, 1.0),
-        input_exchange(steel, KG, 3.0, proc_ref(proc_steel)),
-        input_exchange(transport, TKM, 5.0, proc_ref(proc_transport)),
-        emission_exchange(ch4, 0.02),
-    ],
-)
-
-processes = [proc_electricity, proc_transport, proc_steel, proc_widget]
+processes = [proc_sheep, proc_yarn]
 
 # ---- Mock LCIA method ----
-cat = o.ImpactCategory(
+gwp = o.ImpactCategory(
     id=uid(), name="Mock GWP", ref_unit="kg Mock-CO2-eq",
     description="Mock impact category for testing calculation engines only.",
     impact_factors=[
@@ -127,25 +94,23 @@ cat = o.ImpactCategory(
 method = o.ImpactMethod(
     id=uid(), name="Mock LCIA Method",
     description="Mock LCIA method for cross-engine testing only. Not for real assessment.",
-    impact_categories=[o.Ref(id=cat.id, ref_type=o.RefType.ImpactCategory, name=cat.name)],
+    impact_categories=[o.Ref(id=gwp.id, ref_type=o.RefType.ImpactCategory, name=gwp.name)],
 )
 
-# ---- Minimal unit groups (conversion_factor=1.0 for each, so no rescaling) ----
 def make_unit_group(symbol):
     u_ref = units.unit_ref(symbol)
     g_ref = units.group_ref(symbol)
     unit_entity = o.Unit(id=u_ref.id, name=symbol, conversion_factor=1.0, is_ref_unit=True)
     return o.UnitGroup(id=g_ref.id, name=g_ref.name, units=[unit_entity])
 
-unit_groups = {sym: make_unit_group(sym) for sym in ["kg", "kWh", "tkm", "unit"]}
+unit_groups = {sym: make_unit_group(sym) for sym in ["kg"]}
 
 # ---- Write the expanded JSON-LD directory (checked-in source of truth) ----
 outdir = os.path.dirname(os.path.abspath(__file__))
 ld_dir = os.path.join(outdir, "olca_ld")
-entities = flows + processes + [cat, method] + list(unit_groups.values())
+entities = flows + processes + [gwp, method] + list(unit_groups.values())
 write_ld_dir(ld_dir, entities)
 
 print("Wrote", ld_dir)
-print("Widget process id:", proc_widget.id)
-print("Mock GWP category id:", cat.id)
-print("Mock GWP method id:", method.id)
+print("Wool yarn process id:", proc_yarn.id)
+print("Method id:", method.id)

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "77292b75-c81a-4b03-9e11-eb7875098d98",
+  "category": "Mock products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T03:29:30.696596+00:00",
+  "name": "Mock Crude oil",
+  "version": "01.00.000"
+}

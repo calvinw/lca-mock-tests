@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "67314455-4213-4ce4-a6c2-42117adbfa33",
+  "category": "Mock products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T03:29:30.749386+00:00",
+  "name": "Mock Widget",
+  "version": "01.00.000"
+}

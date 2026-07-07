@@ -1,0 +1,15 @@
+{
+  "@type": "UnitGroup",
+  "@id": "838aaa21-0117-11db-92e3-0800200c9a66",
+  "lastChange": "2026-07-07T03:29:30.749461+00:00",
+  "name": "Units of mass*length",
+  "units": [
+    {
+      "@id": "0dea4ed8-bb6b-4049-b2b4-b2c413ef2180",
+      "conversionFactor": 1.0,
+      "isRefUnit": true,
+      "name": "tkm"
+    }
+  ],
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "09166a1e-26d0-44d1-b6ec-9dbbcc2a2000",
+  "category": "Mock products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T03:29:30.749375+00:00",
+  "name": "Mock Steel",
+  "version": "01.00.000"
+}

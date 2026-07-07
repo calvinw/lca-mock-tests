@@ -1,0 +1,15 @@
+{
+  "@type": "UnitGroup",
+  "@id": "5beb6eed-33a9-47b8-9ede-1dfe8f679159",
+  "lastChange": "2026-07-07T03:29:30.749462+00:00",
+  "name": "Units of items",
+  "units": [
+    {
+      "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+      "conversionFactor": 1.0,
+      "isRefUnit": true,
+      "name": "unit"
+    }
+  ],
+  "version": "01.00.000"
+}
