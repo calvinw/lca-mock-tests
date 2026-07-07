@@ -93,6 +93,29 @@ system from the reference process → Calculate → compare the result to
 | `mock_polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops. |
 | `mock_wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss) and CH4's outsized GWP contribution. |
 
+## Releases
+
+Each case study is also published as its own [GitHub Release](https://github.com/calvinw/lca-mock-tests/releases)
+(`mock_widget-v1`, `mock_cotton_fiber-v1`, `mock_polyester_tshirt-v1`,
+`mock_wool_yarn-v1`), with that case study's importable zip attached as a
+downloadable asset — e.g. `mock_widget.zip`, not the generic `mock_lca.zip`
+filename `make release` produces locally. To cut a new version after
+editing a case study:
+
+```bash
+make build CASE=mock_widget
+make release CASE=mock_widget
+make check CASE=mock_widget                       # verify before publishing
+cp case_studies/mock_widget/mock_lca.zip case_studies/mock_widget/mock_widget.zip
+git tag -a mock_widget-v2 -m "Release mock_widget-v2"
+git push origin mock_widget-v2
+gh release create mock_widget-v2 case_studies/mock_widget/mock_widget.zip --title "mock_widget v2"
+```
+
+GitHub automatically attaches "Source code (zip/tar.gz)" links to any
+tag-based release — that's generated from the tag itself and can't be
+suppressed per-release.
+
 ## Known gaps (see `PLAN.md` for the full roadmap)
 
 - `bw2io`'s JSON-LD importer only links technosphere/production edges

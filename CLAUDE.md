@@ -30,8 +30,13 @@ eventually be checked against, not the compiler itself.
 
 2. **Every case study author = Python code using the `olca_schema` package's
    typed classes** (`Flow`, `Process`, `Exchange`, `ImpactMethod`,
-   `ImpactCategory`, `ImpactFactor`), never hand-typed JSON. Serialize with
-   `olca_schema.zipio.ZipWriter`.
+   `ImpactCategory`, `ImpactFactor`), never hand-typed JSON. `build.py`
+   writes those entities to an expanded, checked-in `olca_ld/` directory
+   (via the shared `scripts/ld_dir.py` helper) — that directory, not a zip,
+   is the source of truth someone can browse in the repo. The importable
+   `mock_lca.zip` is a derived, gitignored build artifact zipped from
+   `olca_ld/` on demand (`scripts/make_release.py` / `make release`), never
+   hand-edited and never committed.
 
 3. **Every case study ships an `expected.json`** with hand-derived values —
    computed independently, before ever running either engine. Agreement
@@ -75,20 +80,37 @@ eventually be checked against, not the compiler itself.
   rough identity (`mock_widget`, `mock_coproduct`, etc.)
 - Flow/process names always prefixed `Mock ` so they're never mistaken for
   real ecoinvent/BAFU data during debugging.
-- Don't commit generated `.zip` files or `_extracted/`/`.bw_project/`
-  directories — they're build artifacts, regenerate them from `build.py`.
+- Commit `build.py`, `expected.json`, and the `olca_ld/` directory. Never
+  commit `mock_lca.zip`, `ids.txt`, `_extracted/`, or `.bw_project/` —
+  they're all build/import artifacts, gitignored, regenerate them from
+  `build.py` (see below).
+- `expected.json` also carries `reference_product`, `method_name`, and
+  `impact_category` fields (in addition to the hand-derived
+  `scaling_vector`/`inventory`/`score`) — this metadata is what
+  `scripts/check_case_study.py` uses to run the check generically without
+  per-case-study hardcoding.
+- Dependencies are managed with `uv` (`pyproject.toml` + `uv.lock`), not
+  bare `pip install`. Prefix Python invocations with `uv run`.
+- If a case study is published as a GitHub Release, the uploaded zip asset
+  is renamed to `<case_study_name>.zip` (e.g. `mock_widget.zip`) before
+  upload — `make release`'s output filename (`mock_lca.zip`) is never used
+  as the release asset name. GitHub always attaches automatic "Source code
+  (zip/tar.gz)" links to any tag-based release; that can't be suppressed
+  per-release via `gh`/the API, so don't try.
 
 ## How to verify a change didn't break anything
 
 ```bash
-for cs in case_studies/*/; do
-    python "$cs/build.py"
-    python scripts/import_to_brightway.py "$cs/mock_lca.zip" \
-        "$(basename $cs) background" "$(basename $cs)_test"
-    python scripts/run_check.py "$(basename $cs)_test" \
-        "$(basename $cs) background" "Mock LCIA Method" "Mock GWP" \
-        "Mock Widget" "$cs/expected.json"
-done
+make all         # build + release (zip) + check every case study
+# or, for a single case study:
+make build   CASE=mock_widget
+make release CASE=mock_widget
+make check   CASE=mock_widget
+make clean   CASE=mock_widget   # removes .bw_project/, _extracted/, mock_lca.zip
 ```
-(This loop is a starting point, not yet a real CI script — see roadmap
-Phase 1.)
+`make check`/`all-check` runs `scripts/check_case_study.py`, which imports
+the zip into a fresh Brightway project and diffs the computed score against
+`expected.json`, using the `reference_product`/`method_name`/
+`impact_category` recorded there. This is a manual step run via the
+Makefile, not yet wired into GitHub Actions CI — see roadmap Phase 1 in
+`PLAN.md`.

@@ -36,9 +36,16 @@ been run manually, not wired into CI, and only cover the single linear case.
       recorded directly in each `expected.json`.
 - [x] Published a GitHub Release per case study (`mock_widget-v1`,
       `mock_cotton_fiber-v1`, `mock_polyester_tshirt-v1`,
-      `mock_wool_yarn-v1`), each with that case study's `mock_lca.zip`
-      attached as a downloadable asset, built from the exact committed
-      `olca_ld/` directory and re-verified before publishing.
+      `mock_wool_yarn-v1`), each with that case study's zip attached as a
+      downloadable asset, built from the exact committed `olca_ld/`
+      directory and re-verified before publishing. Asset is named after
+      the case study (`mock_widget.zip`, `mock_cotton_fiber.zip`, etc.),
+      not the generic `mock_lca.zip` filename `make release` produces
+      locally — rename before `gh release upload` if cutting a new
+      version. Release notes bodies are intentionally left empty. Note:
+      GitHub's automatic "Source code (zip/tar.gz)" links still appear on
+      every tag-based release regardless — that's generated from the tag
+      itself and can't be suppressed per-release via `gh`/the API.
 
 Note: none of the above is the pytest/GitHub-Actions CI suite described in
 Phase 1 below — checking still happens by running `make check`/`make
