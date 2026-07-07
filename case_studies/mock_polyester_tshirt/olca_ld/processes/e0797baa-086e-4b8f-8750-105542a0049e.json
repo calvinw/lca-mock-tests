@@ -1,12 +1,12 @@
 {
   "@type": "Process",
-  "@id": "1f46843f-12c4-4098-935c-28b9b9fe701c",
+  "@id": "e0797baa-086e-4b8f-8750-105542a0049e",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "77292b75-c81a-4b03-9e11-eb7875098d98",
+        "@id": "e3307351-fc12-41bd-86b7-3919f492115f",
         "flowType": "PRODUCT_FLOW",
         "name": "Mock Crude oil"
       },
@@ -27,7 +27,7 @@
       "amount": 0.2,
       "flow": {
         "@type": "Flow",
-        "@id": "b66d75ee-29c1-4486-8185-16f12f32d1c2",
+        "@id": "9dd6635d-e7d6-44fa-aa3c-9a244d7aece2",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -48,7 +48,7 @@
       "amount": 0.1,
       "flow": {
         "@type": "Flow",
-        "@id": "25c838d7-dc4f-4682-98a2-50c044f6cbf0",
+        "@id": "58f41f18-40bc-4283-b0a8-d71e45f94a0e",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CH4"
       },
@@ -66,10 +66,10 @@
       }
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.696768+00:00",
+  "lastChange": "2026-07-07T04:08:21.466587+00:00",
   "location": {
     "@type": "Location",
-    "@id": "51161682-33e8-459b-8159-f265f6470300",
+    "@id": "4f28e69d-d590-4a2f-a85c-517422c71972",
     "name": "GLO"
   },
   "name": "Mock Oil extraction",

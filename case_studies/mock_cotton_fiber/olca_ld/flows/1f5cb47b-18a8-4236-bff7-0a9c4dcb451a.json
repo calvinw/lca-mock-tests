@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "61286f64-3408-4400-a0a2-ee2c41a9d16a",
-  "category": "Mock products",
+  "@id": "1f5cb47b-18a8-4236-bff7-0a9c4dcb451a",
+  "category": "Mock elementary flows/air",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "PRODUCT_FLOW",
-  "lastChange": "2026-07-07T03:29:30.644296+00:00",
-  "name": "Mock Cotton fiber",
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-07T04:08:21.350967+00:00",
+  "name": "Mock NH3",
   "version": "01.00.000"
 }

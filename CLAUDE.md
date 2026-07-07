@@ -45,9 +45,17 @@ eventually be checked against, not the compiler itself.
    makes an engine disagree with `expected.json`, that's the bug, even if
    the two engines agree with each other.
 
-4. **All product flows use round numbers, all CFs are trivial integers**
-   (e.g. CF=1, CF=10) — so every case study's expected values can be
-   verified by hand-arithmetic, not just trusted from a solver.
+4. **All product flows use round numbers.** CFs are trivial integers
+   (CF=1, CF=10) in `mock_widget`, which isn't modeled on any real recipe
+   card. For case studies modeled on a real recipe-card teaching example
+   (`mock_cotton_fiber`, `mock_polyester_tshirt`, `mock_wool_yarn`), CFs
+   instead match that recipe card's real published LCIA method (e.g. TRACI
+   v2.1: CH4=25.0, N2O=298.0, NH3=0.1186) so the mock database's numbers
+   correspond to the real teaching material, not arbitrary substitutes.
+   `expected.json` is still hand-calculated with a calculator in these
+   cases (not mental arithmetic) — the goal of catching plumbing bugs by
+   comparing against an independently-derived ground truth still holds,
+   even where the CF itself isn't a round number.
 
 ## Known gotchas (hit while building `mock_widget`, will recur in new cases)
 

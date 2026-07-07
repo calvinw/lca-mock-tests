@@ -1,14 +1,14 @@
 {
   "@type": "Process",
-  "@id": "22d8d991-9c87-4246-98b8-7ead9afbc201",
+  "@id": "fead7186-a7b2-4ef0-aaa7-ee2224330a8e",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "d64d54d5-a906-4249-92ce-99e30f23c05c",
+        "@id": "d568bff4-c308-4890-bcdf-06dc05abd0ba",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Wool yarn"
+        "name": "Mock N-fertilizer"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,36 +24,10 @@
       }
     },
     {
-      "amount": 1.1,
-      "defaultProvider": {
-        "@type": "Process",
-        "@id": "d3f74fff-2c79-45c8-9f0c-0ffebfc6d777",
-        "name": "Mock Sheep farming"
-      },
+      "amount": 3.0,
       "flow": {
         "@type": "Flow",
-        "@id": "7770a3d9-44e9-4a0d-9943-0d225c26d6a1",
-        "flowType": "PRODUCT_FLOW",
-        "name": "Mock Raw wool"
-      },
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "name": "Mass"
-      },
-      "isInput": true,
-      "isQuantitativeReference": false,
-      "unit": {
-        "@type": "Unit",
-        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
-        "name": "kg"
-      }
-    },
-    {
-      "amount": 2.0,
-      "flow": {
-        "@type": "Flow",
-        "@id": "00a437a5-c905-41dc-8c9c-f987f538003f",
+        "@id": "bb31613f-1fb3-4d69-b9e1-9fb355faf401",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -71,13 +45,13 @@
       }
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.802415+00:00",
+  "lastChange": "2026-07-07T04:08:21.350980+00:00",
   "location": {
     "@type": "Location",
-    "@id": "e1dc750f-b1f4-4bea-b5ad-92edf4a33ba2",
+    "@id": "6c85de38-2dfb-44da-a27c-c87aca2ae513",
     "name": "GLO"
   },
-  "name": "Mock Wool yarn production",
+  "name": "Mock Fertilizer production",
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"
 }

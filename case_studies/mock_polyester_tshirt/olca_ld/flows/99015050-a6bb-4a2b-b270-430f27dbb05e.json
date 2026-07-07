@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "cb4938d1-6cb2-4618-969d-014f6171b858",
-  "category": "Mock elementary flows/air",
+  "@id": "99015050-a6bb-4a2b-b270-430f27dbb05e",
+  "category": "Mock products",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "ELEMENTARY_FLOW",
-  "lastChange": "2026-07-07T03:29:30.802387+00:00",
-  "name": "Mock CH4",
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T04:08:21.466559+00:00",
+  "name": "Mock Polyester fiber",
   "version": "01.00.000"
 }

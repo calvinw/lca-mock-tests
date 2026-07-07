@@ -85,20 +85,22 @@ proc_cotton = o.Process(
 
 processes = [proc_fertilizer, proc_cotton]
 
-# ---- Mock LCIA method (two categories, like the real cotton_fiber teaching case) ----
+# ---- Mock LCIA method (two categories; CFs are the real TRACI v2.1 values
+# used in the recipe-card teaching case this is modeled on, not invented
+# round numbers -- see life-cycle-assessment-mcp/case_studies/cotton_fiber.md) ----
 gwp = o.ImpactCategory(
     id=uid(), name="Mock GWP", ref_unit="kg Mock-CO2-eq",
-    description="Mock climate change category for testing calculation engines only.",
+    description="Mock climate change category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
     impact_factors=[
         o.ImpactFactor(flow=ref_to(co2), unit=KG["unit"], flow_property=KG["prop"], value=1.0),
-        o.ImpactFactor(flow=ref_to(n2o), unit=KG["unit"], flow_property=KG["prop"], value=10.0),
+        o.ImpactFactor(flow=ref_to(n2o), unit=KG["unit"], flow_property=KG["prop"], value=298.0),
     ],
 )
 ep = o.ImpactCategory(
     id=uid(), name="Mock EP", ref_unit="kg Mock-N-eq",
-    description="Mock eutrophication category for testing calculation engines only.",
+    description="Mock eutrophication category for testing calculation engines only. CF matches TRACI v2.1 EP.",
     impact_factors=[
-        o.ImpactFactor(flow=ref_to(nh3), unit=KG["unit"], flow_property=KG["prop"], value=1.0),
+        o.ImpactFactor(flow=ref_to(nh3), unit=KG["unit"], flow_property=KG["prop"], value=0.1186),
     ],
 )
 method = o.ImpactMethod(

@@ -1,14 +1,14 @@
 {
   "@type": "Process",
-  "@id": "d3f74fff-2c79-45c8-9f0c-0ffebfc6d777",
+  "@id": "b3d8fc47-32d5-4ec6-aa56-c7c698a3556e",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "7770a3d9-44e9-4a0d-9943-0d225c26d6a1",
+        "@id": "a0552fbf-6686-44b1-a9e8-4c1aa2ee8b0b",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Raw wool"
+        "name": "Mock Wool yarn"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,10 +24,36 @@
       }
     },
     {
-      "amount": 0.5,
+      "amount": 1.1,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "3f96b9b9-8369-4a80-9cc8-39d2b5e4b48a",
+        "name": "Mock Sheep farming"
+      },
       "flow": {
         "@type": "Flow",
-        "@id": "00a437a5-c905-41dc-8c9c-f987f538003f",
+        "@id": "c4fc46e1-eaa3-40e0-8f29-b752d515aa6f",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock Raw wool"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "2b375593-8bc7-4463-bcb6-57a7472ce5b9",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -43,36 +69,15 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       }
-    },
-    {
-      "amount": 0.4,
-      "flow": {
-        "@type": "Flow",
-        "@id": "cb4938d1-6cb2-4618-969d-014f6171b858",
-        "flowType": "ELEMENTARY_FLOW",
-        "name": "Mock CH4"
-      },
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "name": "Mass"
-      },
-      "isInput": false,
-      "isQuantitativeReference": false,
-      "unit": {
-        "@type": "Unit",
-        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
-        "name": "kg"
-      }
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.802406+00:00",
+  "lastChange": "2026-07-07T04:08:21.586232+00:00",
   "location": {
     "@type": "Location",
-    "@id": "e1dc750f-b1f4-4bea-b5ad-92edf4a33ba2",
+    "@id": "f597c105-a922-4d03-b3b0-ab77d7b72f4a",
     "name": "GLO"
   },
-  "name": "Mock Sheep farming",
+  "name": "Mock Wool yarn production",
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"
 }

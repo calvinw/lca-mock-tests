@@ -1,12 +1,12 @@
 {
   "@type": "ImpactCategory",
-  "@id": "42849f07-ae92-40b0-89b9-54388fb860cf",
-  "description": "Mock eutrophication category for testing calculation engines only.",
+  "@id": "ea6c7e3c-a463-4d09-b3ed-86d71e7c663d",
+  "description": "Mock eutrophication category for testing calculation engines only. CF matches TRACI v2.1 EP.",
   "impactFactors": [
     {
       "flow": {
         "@type": "Flow",
-        "@id": "693fa80c-6d68-4a73-a51d-600cf975309c",
+        "@id": "1f5cb47b-18a8-4236-bff7-0a9c4dcb451a",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock NH3"
       },
@@ -20,10 +20,10 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       },
-      "value": 1.0
+      "value": 0.1186
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.644352+00:00",
+  "lastChange": "2026-07-07T04:08:21.351000+00:00",
   "name": "Mock EP",
   "refUnit": "kg Mock-N-eq",
   "version": "01.00.000"

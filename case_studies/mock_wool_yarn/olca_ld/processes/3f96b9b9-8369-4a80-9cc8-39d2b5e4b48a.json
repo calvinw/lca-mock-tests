@@ -1,14 +1,14 @@
 {
   "@type": "Process",
-  "@id": "ff00639c-566f-4059-8755-1c9022692116",
+  "@id": "3f96b9b9-8369-4a80-9cc8-39d2b5e4b48a",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "fca43ea8-1454-417c-87fa-008332dc9ecb",
+        "@id": "c4fc46e1-eaa3-40e0-8f29-b752d515aa6f",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Polyester fiber"
+        "name": "Mock Raw wool"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,36 +24,10 @@
       }
     },
     {
-      "amount": 1.5,
-      "defaultProvider": {
-        "@type": "Process",
-        "@id": "1f46843f-12c4-4098-935c-28b9b9fe701c",
-        "name": "Mock Oil extraction"
-      },
+      "amount": 0.5,
       "flow": {
         "@type": "Flow",
-        "@id": "77292b75-c81a-4b03-9e11-eb7875098d98",
-        "flowType": "PRODUCT_FLOW",
-        "name": "Mock Crude oil"
-      },
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "name": "Mass"
-      },
-      "isInput": true,
-      "isQuantitativeReference": false,
-      "unit": {
-        "@type": "Unit",
-        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
-        "name": "kg"
-      }
-    },
-    {
-      "amount": 5.0,
-      "flow": {
-        "@type": "Flow",
-        "@id": "b66d75ee-29c1-4486-8185-16f12f32d1c2",
+        "@id": "2b375593-8bc7-4463-bcb6-57a7472ce5b9",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -69,15 +43,36 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       }
+    },
+    {
+      "amount": 0.4,
+      "flow": {
+        "@type": "Flow",
+        "@id": "29f6962c-7e2c-475e-bf78-04a3aa3beb57",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Mock CH4"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.696777+00:00",
+  "lastChange": "2026-07-07T04:08:21.586223+00:00",
   "location": {
     "@type": "Location",
-    "@id": "51161682-33e8-459b-8159-f265f6470300",
+    "@id": "f597c105-a922-4d03-b3b0-ab77d7b72f4a",
     "name": "GLO"
   },
-  "name": "Mock Polyester fiber production",
+  "name": "Mock Sheep farming",
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"
 }

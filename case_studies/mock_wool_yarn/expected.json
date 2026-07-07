@@ -2,7 +2,7 @@
   "reference_product": "Mock Wool yarn",
   "method_name": "Mock LCIA Method",
   "impact_category": "Mock GWP",
-  "description": "Hand-calculated. s_P2=1.0, s_P1=1.1. CO2 total = 1.1*0.5 + 2.0 = 2.55. CH4 total = 1.1*0.4 = 0.44. GWP = 2.55*1 + 0.44*10 = 6.95.",
+  "description": "Hand-calculated, using the real TRACI v2.1 CF from the recipe-card teaching case (CH4=25.0). s_P2=1.0, s_P1=1.1. CO2 total = 1.1*0.5 + 2.0 = 2.55. CH4 total = 1.1*0.4 = 0.44. GWP = 2.55*1 + 0.44*25.0 = 13.55.",
   "scaling_vector": {
     "Mock Sheep farming": 1.1,
     "Mock Wool yarn production": 1.0
@@ -11,5 +11,5 @@
     "Mock CO2": 2.55,
     "Mock CH4": 0.44
   },
-  "score": 6.95
+  "score": 13.55
 }

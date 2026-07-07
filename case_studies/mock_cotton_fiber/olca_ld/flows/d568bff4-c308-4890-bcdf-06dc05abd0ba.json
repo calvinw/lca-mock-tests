@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "398071aa-459a-45ee-bb3c-ef15eaf0fd84",
-  "category": "Mock elementary flows/air",
+  "@id": "d568bff4-c308-4890-bcdf-06dc05abd0ba",
+  "category": "Mock products",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "ELEMENTARY_FLOW",
-  "lastChange": "2026-07-07T03:29:30.644304+00:00",
-  "name": "Mock CO2",
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T04:08:21.350843+00:00",
+  "name": "Mock N-fertilizer",
   "version": "01.00.000"
 }

@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "d64d54d5-a906-4249-92ce-99e30f23c05c",
-  "category": "Mock products",
+  "@id": "2b375593-8bc7-4463-bcb6-57a7472ce5b9",
+  "category": "Mock elementary flows/air",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "PRODUCT_FLOW",
-  "lastChange": "2026-07-07T03:29:30.802375+00:00",
-  "name": "Mock Wool yarn",
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-07T04:08:21.586198+00:00",
+  "name": "Mock CO2",
   "version": "01.00.000"
 }

@@ -1,6 +1,6 @@
 {
   "@type": "Flow",
-  "@id": "6864aba9-2cba-4501-87d4-4ad82f64956c",
+  "@id": "29f6962c-7e2c-475e-bf78-04a3aa3beb57",
   "category": "Mock elementary flows/air",
   "flowProperties": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "flowType": "ELEMENTARY_FLOW",
-  "lastChange": "2026-07-07T03:29:30.644310+00:00",
-  "name": "Mock N2O",
+  "lastChange": "2026-07-07T04:08:21.586203+00:00",
+  "name": "Mock CH4",
   "version": "01.00.000"
 }

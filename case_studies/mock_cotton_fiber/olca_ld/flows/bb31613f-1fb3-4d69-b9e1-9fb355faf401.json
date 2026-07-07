@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "77292b75-c81a-4b03-9e11-eb7875098d98",
-  "category": "Mock products",
+  "@id": "bb31613f-1fb3-4d69-b9e1-9fb355faf401",
+  "category": "Mock elementary flows/air",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "PRODUCT_FLOW",
-  "lastChange": "2026-07-07T03:29:30.696596+00:00",
-  "name": "Mock Crude oil",
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-07T04:08:21.350958+00:00",
+  "name": "Mock CO2",
   "version": "01.00.000"
 }

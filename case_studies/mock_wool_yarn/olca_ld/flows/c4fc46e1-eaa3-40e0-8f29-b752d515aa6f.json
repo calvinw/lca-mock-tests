@@ -1,7 +1,7 @@
 {
   "@type": "Flow",
-  "@id": "693fa80c-6d68-4a73-a51d-600cf975309c",
-  "category": "Mock elementary flows/air",
+  "@id": "c4fc46e1-eaa3-40e0-8f29-b752d515aa6f",
+  "category": "Mock products",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
@@ -13,8 +13,8 @@
       "isRefFlowProperty": true
     }
   ],
-  "flowType": "ELEMENTARY_FLOW",
-  "lastChange": "2026-07-07T03:29:30.644314+00:00",
-  "name": "Mock NH3",
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-07T04:08:21.586051+00:00",
+  "name": "Mock Raw wool",
   "version": "01.00.000"
 }

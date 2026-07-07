@@ -1,12 +1,12 @@
 {
   "@type": "Process",
-  "@id": "cbf24961-e82c-4cf2-897e-9c0a4dfce2f5",
+  "@id": "cc649aa0-e992-49ac-a2d4-6a1aaf08a78a",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "61286f64-3408-4400-a0a2-ee2c41a9d16a",
+        "@id": "bdc956e8-7b72-4a86-b638-2ef7af873e70",
         "flowType": "PRODUCT_FLOW",
         "name": "Mock Cotton fiber"
       },
@@ -27,12 +27,12 @@
       "amount": 0.2,
       "defaultProvider": {
         "@type": "Process",
-        "@id": "700e6a4d-d58b-478f-915d-15535175c011",
+        "@id": "fead7186-a7b2-4ef0-aaa7-ee2224330a8e",
         "name": "Mock Fertilizer production"
       },
       "flow": {
         "@type": "Flow",
-        "@id": "1f491c9d-3719-4778-912c-597495277ad3",
+        "@id": "d568bff4-c308-4890-bcdf-06dc05abd0ba",
         "flowType": "PRODUCT_FLOW",
         "name": "Mock N-fertilizer"
       },
@@ -53,7 +53,7 @@
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "398071aa-459a-45ee-bb3c-ef15eaf0fd84",
+        "@id": "bb31613f-1fb3-4d69-b9e1-9fb355faf401",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -74,7 +74,7 @@
       "amount": 0.1,
       "flow": {
         "@type": "Flow",
-        "@id": "6864aba9-2cba-4501-87d4-4ad82f64956c",
+        "@id": "93926bda-ba6d-41e5-be75-998f5adaed77",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock N2O"
       },
@@ -95,7 +95,7 @@
       "amount": 0.1,
       "flow": {
         "@type": "Flow",
-        "@id": "693fa80c-6d68-4a73-a51d-600cf975309c",
+        "@id": "1f5cb47b-18a8-4236-bff7-0a9c4dcb451a",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock NH3"
       },
@@ -113,10 +113,10 @@
       }
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.644341+00:00",
+  "lastChange": "2026-07-07T04:08:21.350990+00:00",
   "location": {
     "@type": "Location",
-    "@id": "428ad5f4-423f-4429-baa7-ba094deda8bc",
+    "@id": "6c85de38-2dfb-44da-a27c-c87aca2ae513",
     "name": "GLO"
   },
   "name": "Mock Cotton farming",

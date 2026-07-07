@@ -94,13 +94,15 @@ proc_tshirt = o.Process(
 
 processes = [proc_oil, proc_fiber, proc_tshirt]
 
-# ---- Mock LCIA method ----
+# ---- Mock LCIA method (CFs are the real TRACI v2.1 values used in the
+# recipe-card teaching case this is modeled on, not invented round numbers --
+# see life-cycle-assessment-mcp/case_studies/polyester_tshirt.md) ----
 gwp = o.ImpactCategory(
     id=uid(), name="Mock GWP", ref_unit="kg Mock-CO2-eq",
-    description="Mock impact category for testing calculation engines only.",
+    description="Mock impact category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
     impact_factors=[
         o.ImpactFactor(flow=ref_to(co2), unit=KG["unit"], flow_property=KG["prop"], value=1.0),
-        o.ImpactFactor(flow=ref_to(ch4), unit=KG["unit"], flow_property=KG["prop"], value=10.0),
+        o.ImpactFactor(flow=ref_to(ch4), unit=KG["unit"], flow_property=KG["prop"], value=25.0),
     ],
 )
 method = o.ImpactMethod(

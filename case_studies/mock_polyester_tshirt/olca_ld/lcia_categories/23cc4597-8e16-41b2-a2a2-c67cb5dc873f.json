@@ -1,12 +1,12 @@
 {
   "@type": "ImpactCategory",
-  "@id": "2f673fe3-1e1c-40fb-b4f4-ed804d703d9b",
-  "description": "Mock impact category for testing calculation engines only.",
+  "@id": "23cc4597-8e16-41b2-a2a2-c67cb5dc873f",
+  "description": "Mock impact category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
   "impactFactors": [
     {
       "flow": {
         "@type": "Flow",
-        "@id": "00a437a5-c905-41dc-8c9c-f987f538003f",
+        "@id": "9dd6635d-e7d6-44fa-aa3c-9a244d7aece2",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -25,7 +25,7 @@
     {
       "flow": {
         "@type": "Flow",
-        "@id": "cb4938d1-6cb2-4618-969d-014f6171b858",
+        "@id": "58f41f18-40bc-4283-b0a8-d71e45f94a0e",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CH4"
       },
@@ -39,10 +39,10 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       },
-      "value": 10.0
+      "value": 25.0
     }
   ],
-  "lastChange": "2026-07-07T03:29:30.802426+00:00",
+  "lastChange": "2026-07-07T04:08:21.466608+00:00",
   "name": "Mock GWP",
   "refUnit": "kg Mock-CO2-eq",
   "version": "01.00.000"

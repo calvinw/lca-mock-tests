@@ -1,20 +1,20 @@
 {
   "@type": "Flow",
-  "@id": "ecd74891-14db-451f-b890-7abd7c4cffb2",
+  "@id": "e3307351-fc12-41bd-86b7-3919f492115f",
   "category": "Mock products",
   "flowProperties": [
     {
       "conversionFactor": 1.0,
       "flowProperty": {
         "@type": "FlowProperty",
-        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
-        "name": "Number of items"
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
       },
       "isRefFlowProperty": true
     }
   ],
   "flowType": "PRODUCT_FLOW",
-  "lastChange": "2026-07-07T03:29:30.696746+00:00",
-  "name": "Mock T-shirt",
+  "lastChange": "2026-07-07T04:08:21.466439+00:00",
+  "name": "Mock Crude oil",
   "version": "01.00.000"
 }
