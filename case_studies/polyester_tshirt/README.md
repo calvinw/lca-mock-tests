@@ -4,6 +4,10 @@ This case represents the production of one polyester T-shirt. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Scaled supply-chain diagram
+
+![Scaled supply-chain diagram](scaled.svg)
+
 ## Process scaling
 
 T-shirt assembly runs once and consumes 0.2 kg of polyester fiber. Producing

@@ -4,6 +4,10 @@ This case represents the production of 1 kg of cotton fiber. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Scaled supply-chain diagram
+
+![Scaled supply-chain diagram](scaled.svg)
+
 ## Process scaling
 
 Cotton farming produces 1 kg of cotton fiber and therefore runs once:

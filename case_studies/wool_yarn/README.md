@@ -4,6 +4,10 @@ This case represents the production of 1 kg of wool yarn. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Scaled supply-chain diagram
+
+![Scaled supply-chain diagram](scaled.svg)
+
 ## Process scaling
 
 Wool yarn production runs once and consumes 1.1 kg of raw wool per kg of yarn:
