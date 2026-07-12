@@ -8,6 +8,16 @@ Brightway.
 
 ![Scaled supply-chain diagram](scaled.svg)
 
+## Unit-process diagrams
+
+### P1 — Fertilizer production
+
+![P1 — Fertilizer production](p1.svg)
+
+### P2 — Cotton farming
+
+![P2 — Cotton farming](p2.svg)
+
 ## Process scaling
 
 Cotton farming produces 1 kg of cotton fiber and therefore runs once:
