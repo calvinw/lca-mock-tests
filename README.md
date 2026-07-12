@@ -102,7 +102,7 @@ even though the included LCIA categories do not characterize it.
 
 The three MCP-aligned case studies are published as individual
 [GitHub Releases](https://github.com/calvinw/lca-mock-tests/releases):
-`cotton_fiber-v1`, `polyester_tshirt-v1`, and `wool_yarn-v1`.
+`cotton_fiber-v4`, `polyester_tshirt-v4`, and `wool_yarn-v4`.
 Each release contains its descriptively named importable ZIP. To cut a new
 version after editing a case study:
 
@@ -110,11 +110,11 @@ version after editing a case study:
 make build CASE=cotton_fiber
 make release CASE=cotton_fiber
 make check CASE=cotton_fiber                 # verify before publishing
-git tag -a cotton_fiber-v2 -m "Release cotton_fiber-v2"
-git push origin cotton_fiber-v2
-gh release create cotton_fiber-v2 \
+git tag -a cotton_fiber-v5 -m "Release cotton_fiber-v5"
+git push origin cotton_fiber-v5
+gh release create cotton_fiber-v5 \
   case_studies/cotton_fiber/cotton_fiber.zip \
-  --title "cotton_fiber v2"
+  --title "Cotton Fiber v5"
 ```
 
 GitHub automatically attaches "Source code (zip/tar.gz)" links to any
