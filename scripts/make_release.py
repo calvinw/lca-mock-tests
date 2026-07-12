@@ -1,7 +1,7 @@
 """
-Zip up a case study's checked-in olca_ld/ directory into an importable
-mock_lca.zip release asset. The zip itself is not committed to git --
-regenerate it any time from the checked-in JSON-LD folder.
+Zip a case study's checked-in olca_ld/ directory into an importable
+mock_lca.zip check artifact and an identical <case_study_name>.zip release
+asset. The zips are not committed to git; regenerate them from olca_ld/.
 
 Usage:
     python scripts/make_release.py <case_study_dir>

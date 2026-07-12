@@ -14,7 +14,7 @@ check:
 	$(RUN) scripts/check_case_study.py case_studies/$(CASE)
 
 clean:
-	rm -rf case_studies/$(CASE)/.bw_project case_studies/$(CASE)/_extracted case_studies/$(CASE)/mock_lca.zip
+	rm -rf case_studies/$(CASE)/.bw_project case_studies/$(CASE)/_extracted case_studies/$(CASE)/mock_lca.zip case_studies/$(CASE)/$(CASE).zip
 
 # Build + release + check every case study
 all: all-build all-release all-check
@@ -39,5 +39,5 @@ all-check:
 
 all-clean:
 	@for cs in $(CASE_STUDIES); do \
-		rm -rf case_studies/$$cs/.bw_project case_studies/$$cs/_extracted case_studies/$$cs/mock_lca.zip; \
+		rm -rf case_studies/$$cs/.bw_project case_studies/$$cs/_extracted case_studies/$$cs/mock_lca.zip case_studies/$$cs/$$cs.zip; \
 	done

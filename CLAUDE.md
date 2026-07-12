@@ -90,9 +90,9 @@ eventually be checked against, not the compiler itself.
 - Flow/process names always prefixed `Mock ` so they're never mistaken for
   real ecoinvent/BAFU data during debugging.
 - Commit `build.py`, `expected.json`, and the `olca_ld/` directory. Never
-  commit `mock_lca.zip`, `ids.txt`, `_extracted/`, or `.bw_project/` —
-  they're all build/import artifacts, gitignored, regenerate them from
-  `build.py` (see below).
+  commit `mock_lca.zip`, `<case_study_name>.zip`, `ids.txt`, `_extracted/`,
+  or `.bw_project/` — they're all build/import artifacts, gitignored, and
+  should be regenerated from the checked-in source (see below).
 - `expected.json` also carries `reference_product`, `method_name`, and
   `impact_category` fields (in addition to the hand-derived
   `scaling_vector`/`inventory`/`score`) — this metadata is what
@@ -114,7 +114,7 @@ make all         # build + release (zip) + check every case study
 make build   CASE=mock_widget
 make release CASE=mock_widget
 make check   CASE=mock_widget
-make clean   CASE=mock_widget   # removes .bw_project/, _extracted/, mock_lca.zip
+make clean   CASE=mock_widget   # removes imported projects and generated ZIPs
 ```
 `make check`/`all-check` runs `scripts/check_case_study.py`, which imports
 the zip into a fresh Brightway project and diffs the computed score against

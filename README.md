@@ -13,11 +13,13 @@ methodology difference (allocation choice, characterization factors) or a
 plumbing bug (a silently unlinked exchange, a unit conversion error, a flow
 identity mismatch).
 
-This repo is a small, deliberately synthetic supply chain graph — round
-numbers, trivial characterization factors — where every intermediate number
-(scaling vector, inventory, impact score) can be computed by hand. It exists
-to catch plumbing bugs *before* they hide inside real data, and to serve as a
-regression suite for a future recipe-card-to-engine compiler.
+This repo is a suite of small, deliberately synthetic supply-chain graphs where
+every intermediate number (scaling vector, inventory, impact score) can be
+computed by hand. `mock_widget` uses round numbers and trivial characterization
+factors; the three MCP-aligned studies use the corresponding TRACI v2.1 factors
+so their results can be compared directly with the LCA MCP server. The suite
+exists to catch plumbing bugs *before* they hide inside real data and to serve
+as a regression suite for a future recipe-card-to-engine compiler.
 
 ## Format
 
@@ -33,7 +35,7 @@ cleanly into both engines** without a separate translation layer.
 
 ```
 case_studies/
-  mock_widget/
+  <case_name>/
     build.py         — builds the graph + LCIA method, writes olca_ld/
     olca_ld/         — expanded, checked-in JSON-LD (flows/, processes/,
                        lcia_categories/, lcia_methods/, unit_groups/) --
@@ -47,12 +49,12 @@ case_studies/
 scripts/
   ld_dir.py                — shared helper: writes olca_schema entities to
                               an expanded JSON-LD dir, and zips that dir
-  make_release.py          — zips a case study's olca_ld/ into mock_lca.zip
+  make_release.py          — creates mock_lca.zip and a release-ready
+                              <case_name>.zip from olca_ld/
   import_to_brightway.py   — generic JSON-LD zip → Brightway project importer
-  run_check.py             — runs bw2calc against an imported case study and
-                              checks the result against expected.json
-  check_case_study.py      — import_to_brightway.py + run_check.py in one
-                              step, reading metadata from expected.json
+  run_check.py             — checks all expected LCIA scores with bw2calc
+  check_case_study.py      — checks JSON-LD scaling links and inventory,
+                              imports into Brightway, then checks LCIA scores
 ```
 
 ## Quick start
@@ -67,9 +69,9 @@ make all
 
 # Or work on a single case study:
 make build   CASE=mock_widget   # build.py -> writes case_studies/mock_widget/olca_ld/
-make release CASE=mock_widget   # zips olca_ld/ -> case_studies/mock_widget/mock_lca.zip
+make release CASE=mock_widget   # creates mock_lca.zip and mock_widget.zip
 make check   CASE=mock_widget   # imports the zip into Brightway, checks vs expected.json
-make clean   CASE=mock_widget   # removes .bw_project/, _extracted/, mock_lca.zip
+make clean   CASE=mock_widget   # removes imported projects and generated ZIPs
 ```
 
 Equivalent raw commands (what the Makefile targets run under the hood):
@@ -98,20 +100,22 @@ even though the included LCIA categories do not characterize it.
 
 ## Releases
 
-Each case study is also published as its own [GitHub Release](https://github.com/calvinw/lca-mock-tests/releases)
-(`mock_widget-v1`, `mock_cotton_fiber-v1`, `mock_polyester_tshirt-v1`,
-`mock_wool_yarn-v1`), with that case study's importable zip attached as a
-downloadable asset — e.g. `mock_widget.zip`, not the generic `mock_lca.zip`
-filename `make release` produces locally. To cut a new version after
-editing a case study:
+The three MCP-aligned case studies are published as individual
+[GitHub Releases](https://github.com/calvinw/lca-mock-tests/releases):
+`mock_cotton_fiber-v3`, `mock_polyester_tshirt-v3`, and `mock_wool_yarn-v3`.
+Each release contains its descriptively named importable ZIP. `mock_widget`
+remains in the repository as a basic development example but does not have a
+published release. To cut a new version after editing a case study:
 
 ```bash
-make build CASE=mock_widget
-make release CASE=mock_widget
-make check CASE=mock_widget                       # verify before publishing
-git tag -a mock_widget-v2 -m "Release mock_widget-v2"
-git push origin mock_widget-v2
-gh release create mock_widget-v2 case_studies/mock_widget/mock_widget.zip --title "mock_widget v2"
+make build CASE=mock_cotton_fiber
+make release CASE=mock_cotton_fiber
+make check CASE=mock_cotton_fiber                 # verify before publishing
+git tag -a mock_cotton_fiber-v4 -m "Release mock_cotton_fiber-v4"
+git push origin mock_cotton_fiber-v4
+gh release create mock_cotton_fiber-v4 \
+  case_studies/mock_cotton_fiber/mock_cotton_fiber.zip \
+  --title "mock_cotton_fiber v4"
 ```
 
 GitHub automatically attaches "Source code (zip/tar.gz)" links to any
