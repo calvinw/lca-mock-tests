@@ -34,9 +34,10 @@ eventually be checked against, not the compiler itself.
    writes those entities to an expanded, checked-in `olca_ld/` directory
    (via the shared `scripts/ld_dir.py` helper) — that directory, not a zip,
    is the source of truth someone can browse in the repo. The importable
-   `mock_lca.zip` is a derived, gitignored build artifact zipped from
-   `olca_ld/` on demand (`scripts/make_release.py` / `make release`), never
-   hand-edited and never committed.
+   `mock_lca.zip` and descriptively named release copy
+   (`<case_study_name>.zip`) are derived, gitignored build artifacts zipped
+   from `olca_ld/` on demand (`scripts/make_release.py` / `make release`),
+   never hand-edited and never committed.
 
 3. **Every case study ships an `expected.json`** with hand-derived values —
    computed independently, before ever running either engine. Agreement
@@ -99,10 +100,9 @@ eventually be checked against, not the compiler itself.
   per-case-study hardcoding.
 - Dependencies are managed with `uv` (`pyproject.toml` + `uv.lock`), not
   bare `pip install`. Prefix Python invocations with `uv run`.
-- If a case study is published as a GitHub Release, the uploaded zip asset
-  is renamed to `<case_study_name>.zip` (e.g. `mock_widget.zip`) before
-  upload — `make release`'s output filename (`mock_lca.zip`) is never used
-  as the release asset name. GitHub always attaches automatic "Source code
+- If a case study is published as a GitHub Release, upload the generated
+  `<case_study_name>.zip` asset (e.g. `mock_widget.zip`), not the generic
+  `mock_lca.zip` check artifact. GitHub always attaches automatic "Source code
   (zip/tar.gz)" links to any tag-based release; that can't be suppressed
   per-release via `gh`/the API, so don't try.
 

@@ -1,12 +1,12 @@
 {
   "@type": "ImpactCategory",
-  "@id": "23cc4597-8e16-41b2-a2a2-c67cb5dc873f",
-  "description": "Mock impact category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
+  "@id": "cd90fea2-26d1-4bb2-b0eb-3f921a0f1669",
+  "description": "Mock climate change category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
   "impactFactors": [
     {
       "flow": {
         "@type": "Flow",
-        "@id": "9dd6635d-e7d6-44fa-aa3c-9a244d7aece2",
+        "@id": "3eba562b-8c47-48dc-a387-93ee04d84aaa",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -25,9 +25,9 @@
     {
       "flow": {
         "@type": "Flow",
-        "@id": "58f41f18-40bc-4283-b0a8-d71e45f94a0e",
+        "@id": "245c71c6-c562-4e1c-94f9-da2f18199905",
         "flowType": "ELEMENTARY_FLOW",
-        "name": "Mock CH4"
+        "name": "Mock N2O"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -39,10 +39,10 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       },
-      "value": 25.0
+      "value": 298.0
     }
   ],
-  "lastChange": "2026-07-07T04:08:21.466608+00:00",
+  "lastChange": "2026-07-12T16:25:41.402260+00:00",
   "name": "Mock GWP",
   "refUnit": "kg Mock-CO2-eq",
   "version": "01.00.000"

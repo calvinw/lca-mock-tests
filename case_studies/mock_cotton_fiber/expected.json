@@ -2,16 +2,20 @@
   "reference_product": "Mock Cotton fiber",
   "method_name": "Mock LCIA Method",
   "impact_category": "Mock GWP",
-  "description": "Hand-calculated, using the real TRACI v2.1 CFs from the recipe-card teaching case (N2O=298.0 for GWP, NH3=0.1186 for EP). s_P1=0.2, s_P2=1.0. CO2 total = 0.2*3.0 + 1.0*1.0 = 1.6. N2O total = 0.1. NH3 total = 0.1. GWP = 1.6*1 + 0.1*298.0 = 31.4. EP = 0.1*0.1186 = 0.01186.",
+  "description": "Matches the cotton_fiber MCP case study. s_P1=0.2, s_P2=1.0. CO2 total = 0.2*3.5 + 0.8 = 1.5. N2O total = 0.015. NH3 total = 0.010. Water extraction = 8000 L. GWP = 1.5 + 0.015*298 = 5.97. EP = 0.010*0.1186 = 0.001186.",
   "scaling_vector": {
     "Mock Fertilizer production": 0.2,
     "Mock Cotton farming": 1.0
   },
   "inventory": {
-    "Mock CO2": 1.6,
-    "Mock N2O": 0.1,
-    "Mock NH3": 0.1
+    "Mock CO2": 1.5,
+    "Mock N2O": 0.015,
+    "Mock NH3": 0.010,
+    "Mock Water": 8000.0
   },
-  "score": 31.4,
-  "score_note": "score is for Mock GWP (the primary/reference category run_check.py checks). Mock EP score is 0.01186 — rerun run_check.py with impact_category='Mock EP' and compare against 0.01186 to check the second category."
+  "impact_scores": {
+    "Mock GWP": 5.97,
+    "Mock EP": 0.001186
+  },
+  "score": 5.97
 }

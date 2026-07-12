@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "9635b442-fdd5-4441-b3c4-2b6ce234e2d9",
+  "category": "Mock elementary flows/resource/water",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "name": "Volume"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-12T16:25:41.402225+00:00",
+  "name": "Mock Water",
+  "version": "01.00.000"
+}

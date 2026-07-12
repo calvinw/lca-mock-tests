@@ -1,14 +1,14 @@
 {
   "@type": "Process",
-  "@id": "e0797baa-086e-4b8f-8750-105542a0049e",
+  "@id": "1195ed56-6604-43f9-85ab-d2340d354fac",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "e3307351-fc12-41bd-86b7-3919f492115f",
+        "@id": "91e5d580-4ff0-4ac0-9557-306a18419350",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Crude oil"
+        "name": "Mock N-fertilizer"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,10 +24,10 @@
       }
     },
     {
-      "amount": 0.2,
+      "amount": 3.5,
       "flow": {
         "@type": "Flow",
-        "@id": "9dd6635d-e7d6-44fa-aa3c-9a244d7aece2",
+        "@id": "3eba562b-8c47-48dc-a387-93ee04d84aaa",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -43,36 +43,15 @@
         "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
         "name": "kg"
       }
-    },
-    {
-      "amount": 0.1,
-      "flow": {
-        "@type": "Flow",
-        "@id": "58f41f18-40bc-4283-b0a8-d71e45f94a0e",
-        "flowType": "ELEMENTARY_FLOW",
-        "name": "Mock CH4"
-      },
-      "flowProperty": {
-        "@type": "FlowProperty",
-        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
-        "name": "Mass"
-      },
-      "isInput": false,
-      "isQuantitativeReference": false,
-      "unit": {
-        "@type": "Unit",
-        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
-        "name": "kg"
-      }
     }
   ],
-  "lastChange": "2026-07-07T04:08:21.466587+00:00",
+  "lastChange": "2026-07-12T16:25:41.402240+00:00",
   "location": {
     "@type": "Location",
-    "@id": "4f28e69d-d590-4a2f-a85c-517422c71972",
+    "@id": "f6f005b7-480f-4a5a-9ee7-883d099bf39a",
     "name": "GLO"
   },
-  "name": "Mock Oil extraction",
+  "name": "Mock Fertilizer production",
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"
 }

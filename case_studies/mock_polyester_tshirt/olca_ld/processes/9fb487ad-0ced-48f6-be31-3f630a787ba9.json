@@ -1,14 +1,14 @@
 {
   "@type": "Process",
-  "@id": "b3d8fc47-32d5-4ec6-aa56-c7c698a3556e",
+  "@id": "9fb487ad-0ced-48f6-be31-3f630a787ba9",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "a0552fbf-6686-44b1-a9e8-4c1aa2ee8b0b",
+        "@id": "d0842821-09bc-4f04-bc14-e8033ebf1f52",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Wool yarn"
+        "name": "Mock Polyester fiber"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -24,17 +24,17 @@
       }
     },
     {
-      "amount": 1.1,
+      "amount": 1.5,
       "defaultProvider": {
         "@type": "Process",
-        "@id": "3f96b9b9-8369-4a80-9cc8-39d2b5e4b48a",
-        "name": "Mock Sheep farming"
+        "@id": "5f0822e9-be37-4e4f-b8ac-61f62665b75e",
+        "name": "Mock Oil extraction"
       },
       "flow": {
         "@type": "Flow",
-        "@id": "c4fc46e1-eaa3-40e0-8f29-b752d515aa6f",
+        "@id": "26bb1e1a-9535-4376-af15-dfca7cf8bd69",
         "flowType": "PRODUCT_FLOW",
-        "name": "Mock Raw wool"
+        "name": "Mock Crude oil"
       },
       "flowProperty": {
         "@type": "FlowProperty",
@@ -50,10 +50,10 @@
       }
     },
     {
-      "amount": 2.0,
+      "amount": 5.5,
       "flow": {
         "@type": "Flow",
-        "@id": "2b375593-8bc7-4463-bcb6-57a7472ce5b9",
+        "@id": "daa92b1c-e23b-44c7-bd86-e1cb840e405c",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -71,13 +71,13 @@
       }
     }
   ],
-  "lastChange": "2026-07-07T04:08:21.586232+00:00",
+  "lastChange": "2026-07-12T16:25:41.503152+00:00",
   "location": {
     "@type": "Location",
-    "@id": "f597c105-a922-4d03-b3b0-ab77d7b72f4a",
+    "@id": "d38554c0-f98c-476b-ae8f-076f1f862811",
     "name": "GLO"
   },
-  "name": "Mock Wool yarn production",
+  "name": "Mock Polyester fiber production",
   "processType": "UNIT_PROCESS",
   "version": "01.00.000"
 }

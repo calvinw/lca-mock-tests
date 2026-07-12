@@ -21,14 +21,20 @@ def run_and_check(bw_dir, project_name, db_name, method_name, impact_category,
     db = bd.Database(db_name)
     product = next(a for a in db if a["name"] == product_name and a.get("type") == "product")
 
-    method = (method_name, impact_category)
-    lca = bc.LCA(demand={product: 1}, method=method)
-    lca.lci()
-    lca.lcia()
-
     expected = json.load(open(expected_path))
-    ok = abs(lca.score - expected["score"]) < 1e-6
-    print(f"Score: {lca.score}  Expected: {expected['score']}  {'OK' if ok else 'MISMATCH'}")
+    expected_scores = expected.get("impact_scores", {impact_category: expected["score"]})
+    ok = True
+    for category, expected_score in expected_scores.items():
+        method = (method_name, category)
+        lca = bc.LCA(demand={product: 1}, method=method)
+        lca.lci()
+        lca.lcia()
+        matches = abs(lca.score - expected_score) < 1e-6
+        ok = ok and matches
+        print(
+            f"{category}: {lca.score}  Expected: {expected_score}  "
+            f"{'OK' if matches else 'MISMATCH'}"
+        )
     return ok
 
 

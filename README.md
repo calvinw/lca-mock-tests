@@ -43,6 +43,7 @@ case_studies/
                        inventory, impact score, plus the reference
                        product/method/category names used to check it)
     mock_lca.zip     — regenerated on demand from olca_ld/, gitignored
+    <case_name>.zip  — identical, release-ready asset with a descriptive name
 scripts/
   ld_dir.py                — shared helper: writes olca_schema entities to
                               an expanded JSON-LD dir, and zips that dir
@@ -80,18 +81,20 @@ uv run python scripts/check_case_study.py case_studies/mock_widget
 ```
 
 To test the same zip in **openLCA**: File → Import → openLCA JSON-LD Zip
-File → select `case_studies/mock_widget/mock_lca.zip` → create a product
+File → select a case study's descriptively named zip → create a product
 system from the reference process → Calculate → compare the result to
-`expected.json`.
+`expected.json`. Water in the cotton and wool examples is an elementary
+resource input (8,000 L and 30 L respectively), so it appears in the inventory
+even though the included LCIA categories do not characterize it.
 
 ## Current case studies
 
 | Case study | Tests |
 |---|---|
 | `mock_widget` | Basic linear chain (2 levels deep), no allocation, no loops. Sanity check for matrix solve + characterization. |
-| `mock_cotton_fiber` | 2-process chain, two impact categories at once (GWP + eutrophication) sharing a common emission (N2O). |
+| `mock_cotton_fiber` | 2-process chain with GWP and eutrophication: N2O drives GWP, NH3 drives eutrophication, and water extraction tests a volume resource input. |
 | `mock_polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops. |
-| `mock_wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss) and CH4's outsized GWP contribution. |
+| `mock_wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss), CH4's outsized GWP contribution, and water extraction. |
 
 ## Releases
 
@@ -106,7 +109,6 @@ editing a case study:
 make build CASE=mock_widget
 make release CASE=mock_widget
 make check CASE=mock_widget                       # verify before publishing
-cp case_studies/mock_widget/mock_lca.zip case_studies/mock_widget/mock_widget.zip
 git tag -a mock_widget-v2 -m "Release mock_widget-v2"
 git push origin mock_widget-v2
 gh release create mock_widget-v2 case_studies/mock_widget/mock_widget.zip --title "mock_widget v2"

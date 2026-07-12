@@ -68,7 +68,7 @@ proc_oil = o.Process(
     exchanges=[
         output_exchange(oil, KG, 1.0),
         emission_exchange(co2, 0.2),
-        emission_exchange(ch4, 0.1),
+        emission_exchange(ch4, 0.05),
     ],
 )
 
@@ -78,7 +78,7 @@ proc_fiber = o.Process(
     exchanges=[
         output_exchange(fiber, KG, 1.0),
         input_exchange(oil, KG, 1.5, proc_ref(proc_oil)),
-        emission_exchange(co2, 5.0),
+        emission_exchange(co2, 5.5),
     ],
 )
 

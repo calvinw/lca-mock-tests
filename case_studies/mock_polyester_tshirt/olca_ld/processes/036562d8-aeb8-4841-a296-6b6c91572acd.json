@@ -1,12 +1,12 @@
 {
   "@type": "Process",
-  "@id": "3c9f8d9e-22db-41ef-b6e4-8d35bd91f15d",
+  "@id": "036562d8-aeb8-4841-a296-6b6c91572acd",
   "exchanges": [
     {
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "7d2e5a5d-9def-47b3-9035-71a20cc79b00",
+        "@id": "21ab4e3e-75e2-4b8a-848b-e57565ddb8e5",
         "flowType": "PRODUCT_FLOW",
         "name": "Mock T-shirt"
       },
@@ -27,12 +27,12 @@
       "amount": 0.2,
       "defaultProvider": {
         "@type": "Process",
-        "@id": "39c353d1-889e-43f9-b7d6-fd726861048a",
+        "@id": "9fb487ad-0ced-48f6-be31-3f630a787ba9",
         "name": "Mock Polyester fiber production"
       },
       "flow": {
         "@type": "Flow",
-        "@id": "99015050-a6bb-4a2b-b270-430f27dbb05e",
+        "@id": "d0842821-09bc-4f04-bc14-e8033ebf1f52",
         "flowType": "PRODUCT_FLOW",
         "name": "Mock Polyester fiber"
       },
@@ -53,7 +53,7 @@
       "amount": 1.0,
       "flow": {
         "@type": "Flow",
-        "@id": "9dd6635d-e7d6-44fa-aa3c-9a244d7aece2",
+        "@id": "daa92b1c-e23b-44c7-bd86-e1cb840e405c",
         "flowType": "ELEMENTARY_FLOW",
         "name": "Mock CO2"
       },
@@ -71,10 +71,10 @@
       }
     }
   ],
-  "lastChange": "2026-07-07T04:08:21.466601+00:00",
+  "lastChange": "2026-07-12T16:25:41.503158+00:00",
   "location": {
     "@type": "Location",
-    "@id": "4f28e69d-d590-4a2f-a85c-517422c71972",
+    "@id": "d38554c0-f98c-476b-ae8f-076f1f862811",
     "name": "GLO"
   },
   "name": "Mock T-shirt assembly",

@@ -10,6 +10,7 @@ def uid():
 
 # ---- Flow property / unit refs (from standard olca reference data) ----
 KG = dict(unit=units.unit_ref("kg"), prop=units.property_ref("kg"))
+L = dict(unit=units.unit_ref("l"), prop=units.property_ref("l"))
 
 def flow_prop_factor(prop_ref):
     return o.FlowPropertyFactor(conversion_factor=1.0, flow_property=prop_ref, is_ref_flow_property=True)
@@ -20,10 +21,10 @@ def make_product_flow(name, unit_kind):
         category="Mock products", flow_properties=[flow_prop_factor(unit_kind["prop"])],
     )
 
-def make_elem_flow(name):
+def make_elem_flow(name, unit_kind=KG, category="Mock elementary flows/air"):
     return o.Flow(
         id=uid(), name=name, flow_type=o.FlowType.ELEMENTARY_FLOW,
-        category="Mock elementary flows/air", flow_properties=[flow_prop_factor(KG["prop"])],
+        category=category, flow_properties=[flow_prop_factor(unit_kind["prop"])],
     )
 
 # ---- Flows ----
@@ -32,8 +33,9 @@ cotton = make_product_flow("Mock Cotton fiber", KG)
 co2 = make_elem_flow("Mock CO2")
 n2o = make_elem_flow("Mock N2O")
 nh3 = make_elem_flow("Mock NH3")
+water = make_elem_flow("Mock Water", L, "Mock elementary flows/resource/water")
 
-flows = [fertilizer, cotton, co2, n2o, nh3]
+flows = [fertilizer, cotton, co2, n2o, nh3, water]
 
 def ref_to(flow):
     return o.Ref(id=flow.id, ref_type=o.RefType.Flow, name=flow.name, flow_type=flow.flow_type)
@@ -59,6 +61,12 @@ def emission_exchange(flow, amount):
         is_input=False, is_quantitative_reference=False,
     )
 
+def resource_exchange(flow, unit_kind, amount):
+    return o.Exchange(
+        flow=ref_to(flow), amount=amount, unit=unit_kind["unit"], flow_property=unit_kind["prop"],
+        is_input=True, is_quantitative_reference=False,
+    )
+
 GLO = o.Ref(id=uid(), ref_type=o.RefType.Location, name="GLO")
 
 # ---- Processes ----
@@ -67,7 +75,7 @@ proc_fertilizer = o.Process(
     location=GLO,
     exchanges=[
         output_exchange(fertilizer, KG, 1.0),
-        emission_exchange(co2, 3.0),
+        emission_exchange(co2, 3.5),
     ],
 )
 
@@ -77,9 +85,10 @@ proc_cotton = o.Process(
     exchanges=[
         output_exchange(cotton, KG, 1.0),
         input_exchange(fertilizer, KG, 0.2, proc_ref(proc_fertilizer)),
-        emission_exchange(co2, 1.0),
-        emission_exchange(n2o, 0.1),
-        emission_exchange(nh3, 0.1),
+        emission_exchange(co2, 0.8),
+        emission_exchange(n2o, 0.015),
+        emission_exchange(nh3, 0.010),
+        resource_exchange(water, L, 8000.0),
     ],
 )
 
@@ -120,10 +129,19 @@ def make_unit_group(symbol):
 
 unit_groups = {sym: make_unit_group(sym) for sym in ["kg"]}
 
+volume_group_ref = units.group_ref("m3")
+volume_group = o.UnitGroup(
+    id=volume_group_ref.id, name=volume_group_ref.name,
+    units=[
+        o.Unit(id=units.unit_ref("m3").id, name="m3", conversion_factor=1.0, is_ref_unit=True),
+        o.Unit(id=units.unit_ref("l").id, name="l", conversion_factor=0.001, is_ref_unit=False),
+    ],
+)
+
 # ---- Write the expanded JSON-LD directory (checked-in source of truth) ----
 outdir = os.path.dirname(os.path.abspath(__file__))
 ld_dir = os.path.join(outdir, "olca_ld")
-entities = flows + processes + [gwp, ep, method] + list(unit_groups.values())
+entities = flows + processes + [gwp, ep, method] + list(unit_groups.values()) + [volume_group]
 write_ld_dir(ld_dir, entities)
 
 print("Wrote", ld_dir)

@@ -8,6 +8,7 @@ Usage:
     python scripts/make_release.py case_studies/mock_widget
 """
 import os
+import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -20,8 +21,11 @@ if __name__ == "__main__":
     case_dir = sys.argv[1]
     ld_dir = os.path.join(case_dir, "olca_ld")
     zpath = os.path.join(case_dir, "mock_lca.zip")
+    release_path = os.path.join(case_dir, f"{os.path.basename(os.path.normpath(case_dir))}.zip")
     if not os.path.isdir(ld_dir):
         print(f"No olca_ld/ directory found at {ld_dir} -- run build.py first.")
         sys.exit(1)
     zip_ld_dir(ld_dir, zpath)
     print("Wrote", zpath)
+    shutil.copyfile(zpath, release_path)
+    print("Wrote", release_path)

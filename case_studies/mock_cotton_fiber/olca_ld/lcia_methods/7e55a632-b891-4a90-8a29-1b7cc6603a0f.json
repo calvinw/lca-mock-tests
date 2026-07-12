@@ -1,15 +1,20 @@
 {
   "@type": "ImpactMethod",
-  "@id": "6bd1724b-722c-4304-947d-0663f0c3c505",
+  "@id": "7e55a632-b891-4a90-8a29-1b7cc6603a0f",
   "description": "Mock LCIA method for cross-engine testing only. Not for real assessment.",
   "impactCategories": [
     {
       "@type": "ImpactCategory",
-      "@id": "23cc4597-8e16-41b2-a2a2-c67cb5dc873f",
+      "@id": "cd90fea2-26d1-4bb2-b0eb-3f921a0f1669",
       "name": "Mock GWP"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "38816fb1-0737-4be7-89e0-42ae22880f8c",
+      "name": "Mock EP"
     }
   ],
-  "lastChange": "2026-07-07T04:08:21.466612+00:00",
+  "lastChange": "2026-07-12T16:25:41.402270+00:00",
   "name": "Mock LCIA Method",
   "version": "01.00.000"
 }
