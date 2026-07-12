@@ -4,11 +4,7 @@ This case represents the production of 1 kg of cotton fiber. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
-## Scaled supply-chain diagram
-
-![Scaled supply-chain diagram](scaled.svg)
-
-## Unit-process diagrams
+## Unit-process Diagrams (unscaled)
 
 ### P1 — Fertilizer production
 
@@ -17,6 +13,10 @@ Brightway.
 ### P2 — Cotton farming
 
 ![P2 — Cotton farming](p2.svg)
+
+## Scaled supply-chain diagram
+
+![Scaled supply-chain diagram](scaled.svg)
 
 ## Process scaling
 
