@@ -1,0 +1,20 @@
+{
+  "reference_product": "T-shirt",
+  "method_name": "LCIA Method",
+  "impact_category": "GWP",
+  "description": "Matches the polyester_tshirt MCP case study. Hand calculations are documented in README.md.",
+  "scaling_vector": {
+    "Oil extraction": 0.3,
+    "Polyester fiber production": 0.2,
+    "T-shirt assembly": 1.0
+  },
+  "inventory": {
+    "CO2": 2.16,
+    "CH4": 0.015
+  },
+  "impact_scores": {
+    "GWP": 2.535,
+    "MIR": 0.00021569232
+  },
+  "score": 2.535
+}

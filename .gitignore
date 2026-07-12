@@ -5,8 +5,7 @@ bw_project_dir/
 __pycache__/
 *.pyc
 .DS_Store
-case_studies/*/mock_lca.zip
-case_studies/*/mock_*.zip
+case_studies/*/*.zip
 case_studies/*/ids.txt
 
 .venv/

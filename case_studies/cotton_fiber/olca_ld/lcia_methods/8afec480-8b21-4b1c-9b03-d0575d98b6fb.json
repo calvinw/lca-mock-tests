@@ -1,0 +1,30 @@
+{
+  "@type": "ImpactMethod",
+  "@id": "8afec480-8b21-4b1c-9b03-d0575d98b6fb",
+  "description": "LCIA method for cross-engine testing only. Not for real assessment.",
+  "impactCategories": [
+    {
+      "@type": "ImpactCategory",
+      "@id": "886614da-55ca-4418-af0a-5dc913e7050c",
+      "name": "GWP"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "ab6d24ab-e1a0-4997-b4c5-e61893e0f29a",
+      "name": "EP"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "42c1be9f-f412-4e04-b1ab-0b61b3d6ed36",
+      "name": "AP"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "c940ab6a-384f-4417-bb5a-ad705d33d387",
+      "name": "PMFP"
+    }
+  ],
+  "lastChange": "2026-07-12T23:04:26.750808+00:00",
+  "name": "LCIA Method",
+  "version": "01.00.000"
+}

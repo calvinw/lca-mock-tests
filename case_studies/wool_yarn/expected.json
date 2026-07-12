@@ -1,0 +1,20 @@
+{
+  "reference_product": "Wool yarn",
+  "method_name": "LCIA Method",
+  "impact_category": "GWP",
+  "description": "Matches the wool_yarn MCP case study. Hand calculations are documented in README.md.",
+  "scaling_vector": {
+    "Sheep farming": 1.1,
+    "Wool yarn production": 1.0
+  },
+  "inventory": {
+    "CO2": 2.55,
+    "CH4": 0.44,
+    "Water": 30.0
+  },
+  "impact_scores": {
+    "GWP": 13.55,
+    "MIR": 0.00632697472
+  },
+  "score": 13.55
+}

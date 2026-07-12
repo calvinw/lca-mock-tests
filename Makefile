@@ -3,7 +3,7 @@ RUN := uv run python
 
 .PHONY: build release check clean all all-build all-release all-check all-clean
 
-# Usage: make build CASE=mock_widget
+# Usage: make build CASE=cotton_fiber
 build:
 	$(RUN) case_studies/$(CASE)/build.py
 

@@ -46,10 +46,9 @@ eventually be checked against, not the compiler itself.
    makes an engine disagree with `expected.json`, that's the bug, even if
    the two engines agree with each other.
 
-4. **All product flows use round numbers.** CFs are trivial integers
-   (CF=1, CF=10) in `mock_widget`, which isn't modeled on any real recipe
-   card. For case studies modeled on a real recipe-card teaching example
-   (`mock_cotton_fiber`, `mock_polyester_tshirt`, `mock_wool_yarn`), CFs
+4. **All product flows use round numbers.** For case studies modeled on a
+   real recipe-card teaching example (`cotton_fiber`, `polyester_tshirt`,
+   `wool_yarn`), CFs
    instead match that recipe card's real published LCIA method (e.g. TRACI
    v2.1: CH4=25.0, N2O=298.0, NH3=0.1186) so the mock database's numbers
    correspond to the real teaching material, not arbitrary substitutes.
@@ -58,7 +57,7 @@ eventually be checked against, not the compiler itself.
    comparing against an independently-derived ground truth still holds,
    even where the CF itself isn't a round number.
 
-## Known gotchas (hit while building `mock_widget`, will recur in new cases)
+## Known gotchas
 
 - Every `Process` needs a `location` (even a placeholder `Ref`), or
   `bw2io`'s `json_ld_location_name` strategy raises `KeyError`.
@@ -85,10 +84,10 @@ eventually be checked against, not the compiler itself.
 
 ## Conventions
 
-- Case study folder name = snake_case, matches the reference product's
-  rough identity (`mock_widget`, `mock_coproduct`, etc.)
-- Flow/process names always prefixed `Mock ` so they're never mistaken for
-  real ecoinvent/BAFU data during debugging.
+- Case study folder name = snake_case and matches the reference product's
+  rough identity (`cotton_fiber`, `polyester_tshirt`, etc.).
+- Flow/process names use concise domain names without a `Mock` prefix; the
+  repository context identifies these as synthetic test datasets.
 - Commit `build.py`, `expected.json`, and the `olca_ld/` directory. Never
   commit `mock_lca.zip`, `<case_study_name>.zip`, `ids.txt`, `_extracted/`,
   or `.bw_project/` — they're all build/import artifacts, gitignored, and
@@ -101,7 +100,7 @@ eventually be checked against, not the compiler itself.
 - Dependencies are managed with `uv` (`pyproject.toml` + `uv.lock`), not
   bare `pip install`. Prefix Python invocations with `uv run`.
 - If a case study is published as a GitHub Release, upload the generated
-  `<case_study_name>.zip` asset (e.g. `mock_widget.zip`), not the generic
+  `<case_study_name>.zip` asset (e.g. `cotton_fiber.zip`), not the generic
   `mock_lca.zip` check artifact. GitHub always attaches automatic "Source code
   (zip/tar.gz)" links to any tag-based release; that can't be suppressed
   per-release via `gh`/the API, so don't try.
@@ -111,10 +110,10 @@ eventually be checked against, not the compiler itself.
 ```bash
 make all         # build + release (zip) + check every case study
 # or, for a single case study:
-make build   CASE=mock_widget
-make release CASE=mock_widget
-make check   CASE=mock_widget
-make clean   CASE=mock_widget   # removes imported projects and generated ZIPs
+make build   CASE=cotton_fiber
+make release CASE=cotton_fiber
+make check   CASE=cotton_fiber
+make clean   CASE=cotton_fiber   # removes imported projects and generated ZIPs
 ```
 `make check`/`all-check` runs `scripts/check_case_study.py`, which imports
 the zip into a fresh Brightway project and diffs the computed score against

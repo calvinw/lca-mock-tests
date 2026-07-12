@@ -15,8 +15,7 @@ identity mismatch).
 
 This repo is a suite of small, deliberately synthetic supply-chain graphs where
 every intermediate number (scaling vector, inventory, impact score) can be
-computed by hand. `mock_widget` uses round numbers and trivial characterization
-factors; the three MCP-aligned studies use the corresponding TRACI v2.1 factors
+computed by hand. The three MCP-aligned studies use the corresponding TRACI v2.1 factors
 so their results can be compared directly with the LCA MCP server. The suite
 exists to catch plumbing bugs *before* they hide inside real data and to serve
 as a regression suite for a future recipe-card-to-engine compiler.
@@ -44,6 +43,8 @@ case_studies/
     expected.json    — hand-calculated ground truth (scaling vector,
                        inventory, impact score, plus the reference
                        product/method/category names used to check it)
+    README.md        — derivation of the expected scaling, inventory,
+                       and LCIA scores by hand
     mock_lca.zip     — regenerated on demand from olca_ld/, gitignored
     <case_name>.zip  — identical, release-ready asset with a descriptive name
 scripts/
@@ -68,18 +69,18 @@ run any command below.
 make all
 
 # Or work on a single case study:
-make build   CASE=mock_widget   # build.py -> writes case_studies/mock_widget/olca_ld/
-make release CASE=mock_widget   # creates mock_lca.zip and mock_widget.zip
-make check   CASE=mock_widget   # imports the zip into Brightway, checks vs expected.json
-make clean   CASE=mock_widget   # removes imported projects and generated ZIPs
+make build   CASE=cotton_fiber   # build.py -> writes case_studies/cotton_fiber/olca_ld/
+make release CASE=cotton_fiber   # creates mock_lca.zip and cotton_fiber.zip
+make check   CASE=cotton_fiber   # imports the zip into Brightway, checks vs expected.json
+make clean   CASE=cotton_fiber   # removes imported projects and generated ZIPs
 ```
 
 Equivalent raw commands (what the Makefile targets run under the hood):
 
 ```bash
-uv run python case_studies/mock_widget/build.py
-uv run python scripts/make_release.py case_studies/mock_widget
-uv run python scripts/check_case_study.py case_studies/mock_widget
+uv run python case_studies/cotton_fiber/build.py
+uv run python scripts/make_release.py case_studies/cotton_fiber
+uv run python scripts/check_case_study.py case_studies/cotton_fiber
 ```
 
 To test the same zip in **openLCA**: File → Import → openLCA JSON-LD Zip
@@ -93,29 +94,27 @@ even though the included LCIA categories do not characterize it.
 
 | Case study | Tests |
 |---|---|
-| `mock_widget` | Basic linear chain (2 levels deep), no allocation, no loops. Sanity check for matrix solve + characterization. |
-| `mock_cotton_fiber` | 2-process chain with GWP and eutrophication: N2O drives GWP, NH3 drives eutrophication, and water extraction tests a volume resource input. |
-| `mock_polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops. |
-| `mock_wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss), CH4's outsized GWP contribution, and water extraction. |
+| `cotton_fiber` | 2-process chain with GWP, eutrophication, acidification, and particulate matter formation: N2O drives GWP, NH3 drives the other three categories, and water extraction tests a volume resource input. |
+| `polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops, plus methane contributions to GWP and photochemical oxidant formation. |
+| `wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss), methane contributions to GWP and photochemical oxidant formation, and water extraction. |
 
 ## Releases
 
 The three MCP-aligned case studies are published as individual
 [GitHub Releases](https://github.com/calvinw/lca-mock-tests/releases):
-`mock_cotton_fiber-v3`, `mock_polyester_tshirt-v3`, and `mock_wool_yarn-v3`.
-Each release contains its descriptively named importable ZIP. `mock_widget`
-remains in the repository as a basic development example but does not have a
-published release. To cut a new version after editing a case study:
+`cotton_fiber-v1`, `polyester_tshirt-v1`, and `wool_yarn-v1`.
+Each release contains its descriptively named importable ZIP. To cut a new
+version after editing a case study:
 
 ```bash
-make build CASE=mock_cotton_fiber
-make release CASE=mock_cotton_fiber
-make check CASE=mock_cotton_fiber                 # verify before publishing
-git tag -a mock_cotton_fiber-v4 -m "Release mock_cotton_fiber-v4"
-git push origin mock_cotton_fiber-v4
-gh release create mock_cotton_fiber-v4 \
-  case_studies/mock_cotton_fiber/mock_cotton_fiber.zip \
-  --title "mock_cotton_fiber v4"
+make build CASE=cotton_fiber
+make release CASE=cotton_fiber
+make check CASE=cotton_fiber                 # verify before publishing
+git tag -a cotton_fiber-v2 -m "Release cotton_fiber-v2"
+git push origin cotton_fiber-v2
+gh release create cotton_fiber-v2 \
+  case_studies/cotton_fiber/cotton_fiber.zip \
+  --title "cotton_fiber v2"
 ```
 
 GitHub automatically attaches "Source code (zip/tar.gz)" links to any

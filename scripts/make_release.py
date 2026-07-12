@@ -5,7 +5,7 @@ asset. The zips are not committed to git; regenerate them from olca_ld/.
 
 Usage:
     python scripts/make_release.py <case_study_dir>
-    python scripts/make_release.py case_studies/mock_widget
+    python scripts/make_release.py case_studies/cotton_fiber
 """
 import os
 import shutil

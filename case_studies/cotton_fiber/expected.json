@@ -1,0 +1,23 @@
+{
+  "reference_product": "Cotton fiber",
+  "method_name": "LCIA Method",
+  "impact_category": "GWP",
+  "description": "Matches the cotton_fiber MCP case study. Hand calculations are documented in README.md.",
+  "scaling_vector": {
+    "Fertilizer production": 0.2,
+    "Cotton farming": 1.0
+  },
+  "inventory": {
+    "CO2": 1.5,
+    "N2O": 0.015,
+    "NH3": 0.010,
+    "Water": 8000.0
+  },
+  "impact_scores": {
+    "GWP": 5.97,
+    "EP": 0.001186,
+    "AP": 0.0188,
+    "PMFP": 0.0006666666666666666
+  },
+  "score": 5.97
+}

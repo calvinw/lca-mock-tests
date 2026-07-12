@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "c830888f-85e4-40f9-a1e6-e085b1f175ce",
+  "category": "elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-12T23:04:26.750754+00:00",
+  "name": "CO2",
+  "version": "01.00.000"
+}

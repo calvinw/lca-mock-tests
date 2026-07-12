@@ -1,0 +1,146 @@
+{
+  "@type": "Process",
+  "@id": "5d5f4812-f4bf-42eb-a1a1-0d5d6766610f",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "74ed80c7-bc2f-4d21-b1fa-7c86b6b0e973",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Cotton fiber"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.2,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "b8c894a7-a6f3-4d1f-a7e8-44272e596f96",
+        "name": "Fertilizer production"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "d0bbd248-9164-46d6-a784-86176497fbfb",
+        "flowType": "PRODUCT_FLOW",
+        "name": "N-fertilizer"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.8,
+      "flow": {
+        "@type": "Flow",
+        "@id": "c830888f-85e4-40f9-a1e6-e085b1f175ce",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.015,
+      "flow": {
+        "@type": "Flow",
+        "@id": "97a822e4-0ca4-4b1c-b592-cc1bffa72abb",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "N2O"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.01,
+      "flow": {
+        "@type": "Flow",
+        "@id": "f63b2e08-a886-4247-a7c2-888fe08a99cd",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "NH3"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 8000.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "fa02edd4-ea00-42a1-8594-40fecaf630f5",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Water"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "name": "Volume"
+      },
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "b80a512e-e402-4363-8ad0-7d02dcf4a459",
+        "name": "l"
+      }
+    }
+  ],
+  "lastChange": "2026-07-12T23:04:26.750786+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "e069bded-758a-4dd6-888c-fdfea86707fa",
+    "name": "GLO"
+  },
+  "name": "Cotton farming",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

@@ -1,25 +1,21 @@
 # Roadmap
 
-Status as of the initial commit: one working case study (`mock_widget`) has
-been built and manually verified — imported into both a real Brightway
-project and openLCA desktop, matching a hand-calculated expected value
-(score = 6.7) exactly, including the full scaling vector and inventory
-breakdown, in both engines. The scripts that did this are generalized into
-`scripts/import_to_brightway.py` and `scripts/run_check.py`, but have only
-been run manually, not wired into CI, and only cover the single linear case.
+The repository contains three hand-verifiable studies aligned with the LCA
+MCP teaching examples. The generalized import and checking scripts have been
+run manually but are not yet wired into CI.
 
 ## Done since initial commit
 
 - [x] Added three more simple linear-chain case studies —
-      `mock_cotton_fiber` (2-process, two impact categories sharing a
-      common emission), `mock_polyester_tshirt` (3-process, compound
-      scaling), `mock_wool_yarn` (2-process, >1.0 scaling factor). Each
+      `cotton_fiber` (2-process, two impact categories sharing a
+      common emission), `polyester_tshirt` (3-process, compound
+      scaling), `wool_yarn` (2-process, >1.0 scaling factor). Each
       mirrors the topology/teaching point of a real-data case study from
       the `life-cycle-assessment-mcp` repo, rebuilt with round numbers and
-      trivial CFs. All four case studies (including `mock_widget`) verified
+      TRACI characterization factors. All three case studies verified
       manually: 0 unlinked exchanges on import, bw2calc score matches
       `expected.json` exactly. These are still single linear chains, same
-      shape as `mock_widget` — none of this is the foreground-after-background
+      simple linear-chain shape — none of this is the foreground-after-background
       split that Phase 2 below still needs.
 - [x] `build.py` now writes an expanded, checked-in `olca_ld/` JSON-LD
       directory (via `scripts/ld_dir.py`) instead of writing a zip directly
@@ -37,24 +33,21 @@ been run manually, not wired into CI, and only cover the single linear case.
 - [x] Published a GitHub Release per case study, each with that case
       study's zip attached as a downloadable asset, built from the exact
       committed `olca_ld/` directory and re-verified before publishing.
-      Asset is named after the case study (`mock_widget.zip`,
-      `mock_cotton_fiber.zip`, etc.), not the generic `mock_lca.zip`
+      Asset is named after the case study (`cotton_fiber.zip`, etc.), not the
+      generic `mock_lca.zip`
       filename `make release` produces locally — rename before `gh
       release upload` if cutting a new version. Release notes bodies are
       intentionally left empty. Note: GitHub's automatic "Source code
       (zip/tar.gz)" links still appear on every tag-based release
       regardless — that's generated from the tag itself and can't be
       suppressed per-release via `gh`/the API. Current releases:
-      `mock_widget-v1`, `mock_cotton_fiber-v2`, `mock_polyester_tshirt-v2`,
-      `mock_wool_yarn-v2`.
-- [x] `mock_cotton_fiber`, `mock_polyester_tshirt`, and `mock_wool_yarn`
+      `cotton_fiber-v2`, `polyester_tshirt-v2`, and `wool_yarn-v2`.
+- [x] `cotton_fiber`, `polyester_tshirt`, and `wool_yarn`
       switched from invented round-number CFs (CF=1, CF=10) to the real
       TRACI v2.1 characterization factors used in each one's source recipe
       card (CH4=25.0, N2O=298.0, NH3=0.1186), so the mock database's
       numbers correspond to the real teaching material rather than an
-      arbitrary substitute. `mock_widget` is unaffected — it isn't modeled
-      on any real recipe card, so it keeps CF=1/CF=10.
-      `expected.json` recalculated by hand (calculator, not mental
+      arbitrary substitute. `expected.json` recalculated by hand (calculator, not mental
       arithmetic, since NH3's CF isn't round) and reverified for all three.
       This obsoleted their original `-v1` releases; those were deleted
       (both the GitHub Release and the underlying git tag, local and
@@ -92,9 +85,8 @@ mirrors the real BAFU workflow (background imported once, foreground case
 studies layered on top) and it's the one already known to break with
 `bw2io`'s default strategies.
 
-- [ ] Split `mock_widget` into `mock_background` (Electricity, Steel,
-      Transport + their flows/unit groups) and `mock_foreground` (only
-      Widget + its flow), with the foreground's technosphere exchanges
+- [ ] Split one retained linear case into separate background and foreground
+      datasets, with the foreground's technosphere exchanges
       pointing (`defaultProvider`) at the background's process UUIDs
       without redefining them.
 - [ ] Import background first, then foreground, as two separate operations

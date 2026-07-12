@@ -5,7 +5,7 @@ impact_category recorded in that expected.json.
 
 Usage:
     python scripts/check_case_study.py <case_study_dir>
-    python scripts/check_case_study.py case_studies/mock_widget
+    python scripts/check_case_study.py case_studies/cotton_fiber
 """
 import json
 import os
