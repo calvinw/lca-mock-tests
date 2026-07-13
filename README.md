@@ -101,9 +101,9 @@ even though the included LCIA categories do not characterize it.
 
 ## Releases
 
-The three MCP-aligned case studies are published as individual
+The four MCP-aligned case studies are published as individual
 [GitHub Releases](https://github.com/calvinw/lca-mock-tests/releases):
-`cotton_fiber-v5`, `polyester_tshirt-v5`, and `wool_yarn-v5`.
+`cotton_fiber-v5`, `jacket-v5`, `polyester_tshirt-v5`, and `wool_yarn-v5`.
 Each release contains a versioned, importable ZIP with a pre-linked openLCA
 Product System. To cut a new
 version after editing a case study:
