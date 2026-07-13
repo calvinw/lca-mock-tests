@@ -4,6 +4,20 @@ This case represents the production of 1 kg of wool yarn. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Supply-chain structure
+
+![Supply-chain structure](structure.svg)
+
+## Unit-process Diagrams (unscaled)
+
+### P1 — Sheep farming
+
+![P1 — Sheep farming](p1.svg)
+
+### P2 — Wool yarn production
+
+![P2 — Wool yarn production](p2.svg)
+
 ## Scaled supply-chain diagram
 
 ![Scaled supply-chain diagram](scaled.svg)
@@ -13,8 +27,8 @@ Brightway.
 Wool yarn production runs once and consumes 1.1 kg of raw wool per kg of yarn:
 
 ```text
-s_yarn  = 1.0
-s_sheep = 1.0 × 1.1 = 1.1
+s_yarn  = s_2 = 1.0
+s_sheep = s_1 = s_2 × 1.1 = 1.1
 ```
 
 ## Inventory totals

@@ -4,6 +4,10 @@ This case represents the production of 1 kg of cotton fiber. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Supply-chain structure
+
+![Supply-chain structure](structure.svg)
+
 ## Unit-process Diagrams (unscaled)
 
 ### P1 — Fertilizer production
@@ -23,13 +27,13 @@ Brightway.
 Cotton farming produces 1 kg of cotton fiber and therefore runs once:
 
 ```text
-s_cotton = 1.0
+s_cotton = s_2 = 1.0
 ```
 
 Cotton farming consumes 0.2 kg of fertilizer per kg of cotton fiber:
 
 ```text
-s_fertilizer = 1.0 × 0.2 = 0.2
+s_fertilizer = s_1 = s_2 × 0.2 = 0.2
 ```
 
 ## Inventory totals

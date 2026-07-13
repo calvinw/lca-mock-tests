@@ -4,6 +4,24 @@ This case represents the production of one polyester T-shirt. These calculations
 are the independent ground truth recorded in `expected.json` and checked against
 Brightway.
 
+## Supply-chain structure
+
+![Supply-chain structure](structure.svg)
+
+## Unit-process Diagrams (unscaled)
+
+### P1 — Oil extraction
+
+![P1 — Oil extraction](p1.svg)
+
+### P2 — Polyester fiber production
+
+![P2 — Polyester fiber production](p2.svg)
+
+### P3 — T-shirt assembly
+
+![P3 — T-shirt assembly](p3.svg)
+
 ## Scaled supply-chain diagram
 
 ![Scaled supply-chain diagram](scaled.svg)
@@ -14,9 +32,9 @@ T-shirt assembly runs once and consumes 0.2 kg of polyester fiber. Producing
 that fiber consumes 1.5 kg of crude oil per kg of fiber.
 
 ```text
-s_tshirt = 1.0
-s_fiber  = 1.0 × 0.2       = 0.2
-s_oil    = 1.0 × 0.2 × 1.5 = 0.3
+s_tshirt = s_3 = 1.0
+s_fiber  = s_2 = s_3 × 0.2       = 0.2
+s_oil    = s_1 = s_2 × 1.5       = 0.3
 ```
 
 ## Inventory totals
