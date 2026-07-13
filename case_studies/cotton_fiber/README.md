@@ -65,6 +65,10 @@ Cotton farming consumes 0.2 kg of fertilizer per kg of cotton fiber:
 s_fertilizer = s_1 = s_2 × 0.2 = 0.2
 ```
 
+Cotton farming requires 0.2 kg of N-fertilizer per kg of cotton fiber. Since
+the functional unit requires 1.0 kg of cotton fiber, cotton farming runs once
+and requires 0.2 kg of N-fertilizer.
+
 ## Inventory totals
 
 ```text

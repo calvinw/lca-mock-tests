@@ -59,6 +59,9 @@ s_yarn  = s_2 = 1.0
 s_sheep = s_1 = s_2 × 1.1 = 1.1
 ```
 
+Wool yarn production requires 1.1 kg of raw wool per kg of yarn. Since the
+functional unit requires 1.0 kg of wool yarn, it requires 1.1 kg of raw wool.
+
 ## Inventory totals
 
 ```text
