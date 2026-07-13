@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "290cb456-1644-42f2-93f5-da9916f17ba1",
+  "category": "elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-13T02:19:11.792743+00:00",
+  "name": "N2O",
+  "version": "01.00.000"
+}

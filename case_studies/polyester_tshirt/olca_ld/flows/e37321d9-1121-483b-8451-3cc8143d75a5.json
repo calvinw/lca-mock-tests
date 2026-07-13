@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "e37321d9-1121-483b-8451-3cc8143d75a5",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T02:19:13.772109+00:00",
+  "name": "T-shirt",
+  "version": "01.00.000"
+}

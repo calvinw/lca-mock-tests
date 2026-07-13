@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "506f5bda-9cd3-479c-badb-eab188321aee",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T02:19:13.772103+00:00",
+  "name": "Polyester fiber",
+  "version": "01.00.000"
+}

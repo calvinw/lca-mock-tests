@@ -41,22 +41,22 @@ def ref_to(flow):
 def proc_ref(p):
     return o.Ref(id=p.id, ref_type=o.RefType.Process, name=p.name)
 
-def output_exchange(flow, unit_kind, amount):
+def output_exchange(flow, unit_kind, amount, internal_id):
     return o.Exchange(
         flow=ref_to(flow), amount=amount, unit=unit_kind["unit"], flow_property=unit_kind["prop"],
-        is_input=False, is_quantitative_reference=True,
+        internal_id=internal_id, is_input=False, is_quantitative_reference=True,
     )
 
-def input_exchange(flow, unit_kind, amount, provider_ref):
+def input_exchange(flow, unit_kind, amount, provider_ref, internal_id):
     return o.Exchange(
         flow=ref_to(flow), amount=amount, unit=unit_kind["unit"], flow_property=unit_kind["prop"],
-        is_input=True, is_quantitative_reference=False, default_provider=provider_ref,
+        internal_id=internal_id, is_input=True, is_quantitative_reference=False, default_provider=provider_ref,
     )
 
-def emission_exchange(flow, amount):
+def emission_exchange(flow, amount, internal_id):
     return o.Exchange(
         flow=ref_to(flow), amount=amount, unit=KG["unit"], flow_property=KG["prop"],
-        is_input=False, is_quantitative_reference=False,
+        internal_id=internal_id, is_input=False, is_quantitative_reference=False,
     )
 
 GLO = o.Ref(id=uid(), ref_type=o.RefType.Location, name="GLO")
@@ -66,9 +66,9 @@ proc_oil = o.Process(
     id=uid(), name="Oil extraction", process_type=o.ProcessType.UNIT_PROCESS,
     location=GLO,
     exchanges=[
-        output_exchange(oil, KG, 1.0),
-        emission_exchange(co2, 0.2),
-        emission_exchange(ch4, 0.05),
+        output_exchange(oil, KG, 1.0, 1),
+        emission_exchange(co2, 0.2, 2),
+        emission_exchange(ch4, 0.05, 3),
     ],
 )
 
@@ -76,9 +76,9 @@ proc_fiber = o.Process(
     id=uid(), name="Polyester fiber production", process_type=o.ProcessType.UNIT_PROCESS,
     location=GLO,
     exchanges=[
-        output_exchange(fiber, KG, 1.0),
-        input_exchange(oil, KG, 1.5, proc_ref(proc_oil)),
-        emission_exchange(co2, 5.5),
+        output_exchange(fiber, KG, 1.0, 1),
+        input_exchange(oil, KG, 1.5, proc_ref(proc_oil), 2),
+        emission_exchange(co2, 5.5, 3),
     ],
 )
 
@@ -86,13 +86,25 @@ proc_tshirt = o.Process(
     id=uid(), name="T-shirt assembly", process_type=o.ProcessType.UNIT_PROCESS,
     location=GLO,
     exchanges=[
-        output_exchange(tshirt, UNIT, 1.0),
-        input_exchange(fiber, KG, 0.2, proc_ref(proc_fiber)),
-        emission_exchange(co2, 1.0),
+        output_exchange(tshirt, UNIT, 1.0, 1),
+        input_exchange(fiber, KG, 0.2, proc_ref(proc_fiber), 2),
+        emission_exchange(co2, 1.0, 3),
     ],
 )
 
 processes = [proc_oil, proc_fiber, proc_tshirt]
+
+product_system = o.ProductSystem(
+    id=uid(), name="Polyester T-shirt product system",
+    description="Pre-linked product system for one polyester T-shirt.",
+    ref_process=proc_ref(proc_tshirt), ref_exchange=o.ExchangeRef(internal_id=1),
+    target_amount=1.0, target_flow_property=UNIT["prop"], target_unit=UNIT["unit"],
+    processes=[proc_ref(process) for process in processes],
+    process_links=[
+        o.ProcessLink(provider=proc_ref(proc_oil), flow=ref_to(oil), process=proc_ref(proc_fiber), exchange=o.ExchangeRef(internal_id=2)),
+        o.ProcessLink(provider=proc_ref(proc_fiber), flow=ref_to(fiber), process=proc_ref(proc_tshirt), exchange=o.ExchangeRef(internal_id=2)),
+    ],
+)
 
 # ---- LCIA method (CFs are the real TRACI v2.1 values used in the
 # recipe-card teaching case this is modeled on, not invented round numbers --
@@ -132,7 +144,7 @@ unit_groups = {sym: make_unit_group(sym) for sym in ["kg", "unit"]}
 # ---- Write the expanded JSON-LD directory (checked-in source of truth) ----
 outdir = os.path.dirname(os.path.abspath(__file__))
 ld_dir = os.path.join(outdir, "olca_ld")
-entities = flows + processes + [gwp, mir, method] + list(unit_groups.values())
+entities = flows + processes + [product_system, gwp, mir, method] + list(unit_groups.values())
 write_ld_dir(ld_dir, entities)
 
 print("Wrote", ld_dir)

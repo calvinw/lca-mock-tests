@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "06e7dab2-6744-4b03-83e6-470556234ebb",
+  "category": "elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-13T02:19:11.792747+00:00",
+  "name": "NH3",
+  "version": "01.00.000"
+}

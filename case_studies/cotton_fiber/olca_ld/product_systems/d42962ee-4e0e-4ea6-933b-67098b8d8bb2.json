@@ -1,0 +1,62 @@
+{
+  "@type": "ProductSystem",
+  "@id": "d42962ee-4e0e-4ea6-933b-67098b8d8bb2",
+  "description": "Pre-linked product system for 1 kg of cotton fiber.",
+  "lastChange": "2026-07-13T02:19:11.792787+00:00",
+  "name": "Cotton fiber product system",
+  "processLinks": [
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "c15f06d4-10f2-4e3c-8428-5ae5a643d7e6",
+        "flowType": "PRODUCT_FLOW",
+        "name": "N-fertilizer"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "7930654d-37bd-4138-ad37-42644568110b",
+        "name": "Cotton farming"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "e17a00c6-c10f-4961-8d47-bc9dac9d814b",
+        "name": "Fertilizer production"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "@type": "Process",
+      "@id": "e17a00c6-c10f-4961-8d47-bc9dac9d814b",
+      "name": "Fertilizer production"
+    },
+    {
+      "@type": "Process",
+      "@id": "7930654d-37bd-4138-ad37-42644568110b",
+      "name": "Cotton farming"
+    }
+  ],
+  "refExchange": {
+    "internalId": 1
+  },
+  "refProcess": {
+    "@type": "Process",
+    "@id": "7930654d-37bd-4138-ad37-42644568110b",
+    "name": "Cotton farming"
+  },
+  "targetAmount": 1.0,
+  "targetFlowProperty": {
+    "@type": "FlowProperty",
+    "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+    "name": "Mass"
+  },
+  "targetUnit": {
+    "@type": "Unit",
+    "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+    "name": "kg"
+  },
+  "version": "01.00.000"
+}

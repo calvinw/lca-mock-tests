@@ -1,0 +1,81 @@
+{
+  "@type": "Process",
+  "@id": "e29b86f0-b83d-47c3-82c5-90f280f8b167",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "1b262272-2b6d-4080-8d11-3f9ba966ab2c",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Raw wool"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.5,
+      "flow": {
+        "@type": "Flow",
+        "@id": "8bc9378b-d599-4747-b6be-be29826de4a8",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.4,
+      "flow": {
+        "@type": "Flow",
+        "@id": "40c3fa72-db3e-4290-bc52-ec13df0ef4e5",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CH4"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 3,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:14.912209+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "b366d70e-4ef4-4951-b678-491050d466b6",
+    "name": "GLO"
+  },
+  "name": "Sheep farming",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

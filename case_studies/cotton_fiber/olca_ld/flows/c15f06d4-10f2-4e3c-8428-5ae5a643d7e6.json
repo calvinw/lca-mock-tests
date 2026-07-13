@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "c15f06d4-10f2-4e3c-8428-5ae5a643d7e6",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T02:19:11.792661+00:00",
+  "name": "N-fertilizer",
+  "version": "01.00.000"
+}

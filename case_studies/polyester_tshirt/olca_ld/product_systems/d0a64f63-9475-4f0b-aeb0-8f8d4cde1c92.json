@@ -1,0 +1,88 @@
+{
+  "@type": "ProductSystem",
+  "@id": "d0a64f63-9475-4f0b-aeb0-8f8d4cde1c92",
+  "description": "Pre-linked product system for one polyester T-shirt.",
+  "lastChange": "2026-07-13T02:19:13.772152+00:00",
+  "name": "Polyester T-shirt product system",
+  "processLinks": [
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "7d0767ed-2d7a-46fe-b7c9-1755c030b1fb",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Crude oil"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "fb17cd47-f37d-497c-b165-fb9607d81044",
+        "name": "Polyester fiber production"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "93d60fc2-1172-46f6-aa88-28645c314014",
+        "name": "Oil extraction"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "506f5bda-9cd3-479c-badb-eab188321aee",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Polyester fiber"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "a38050cf-b1a9-4bb5-a983-86c8014fb9ad",
+        "name": "T-shirt assembly"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "fb17cd47-f37d-497c-b165-fb9607d81044",
+        "name": "Polyester fiber production"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "@type": "Process",
+      "@id": "93d60fc2-1172-46f6-aa88-28645c314014",
+      "name": "Oil extraction"
+    },
+    {
+      "@type": "Process",
+      "@id": "fb17cd47-f37d-497c-b165-fb9607d81044",
+      "name": "Polyester fiber production"
+    },
+    {
+      "@type": "Process",
+      "@id": "a38050cf-b1a9-4bb5-a983-86c8014fb9ad",
+      "name": "T-shirt assembly"
+    }
+  ],
+  "refExchange": {
+    "internalId": 1
+  },
+  "refProcess": {
+    "@type": "Process",
+    "@id": "a38050cf-b1a9-4bb5-a983-86c8014fb9ad",
+    "name": "T-shirt assembly"
+  },
+  "targetAmount": 1.0,
+  "targetFlowProperty": {
+    "@type": "FlowProperty",
+    "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+    "name": "Number of items"
+  },
+  "targetUnit": {
+    "@type": "Unit",
+    "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+    "name": "unit"
+  },
+  "version": "01.00.000"
+}

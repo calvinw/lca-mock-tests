@@ -84,8 +84,8 @@ uv run python scripts/check_case_study.py case_studies/cotton_fiber
 ```
 
 To test the same zip in **openLCA**: File → Import → openLCA JSON-LD Zip
-File → select a case study's descriptively named zip → create a product
-system from the reference process → Calculate → compare the result to
+File → select a case study's descriptively named zip → open the included product
+system under **Product systems** → Calculate → compare the result to
 `expected.json`. Water in the cotton and wool examples is an elementary
 resource input (8,000 L and 30 L respectively), so it appears in the inventory
 even though the included LCIA categories do not characterize it.
@@ -102,19 +102,20 @@ even though the included LCIA categories do not characterize it.
 
 The three MCP-aligned case studies are published as individual
 [GitHub Releases](https://github.com/calvinw/lca-mock-tests/releases):
-`cotton_fiber-v4`, `polyester_tshirt-v4`, and `wool_yarn-v4`.
-Each release contains its descriptively named importable ZIP. To cut a new
+`cotton_fiber-v5`, `polyester_tshirt-v5`, and `wool_yarn-v5`.
+Each release contains a versioned, importable ZIP with a pre-linked openLCA
+Product System. To cut a new
 version after editing a case study:
 
 ```bash
 make build CASE=cotton_fiber
 make release CASE=cotton_fiber
 make check CASE=cotton_fiber                 # verify before publishing
-git tag -a cotton_fiber-v5 -m "Release cotton_fiber-v5"
-git push origin cotton_fiber-v5
-gh release create cotton_fiber-v5 \
-  case_studies/cotton_fiber/cotton_fiber.zip \
-  --title "Cotton Fiber v5"
+git tag -a cotton_fiber-v6 -m "Release cotton_fiber-v6"
+git push origin cotton_fiber-v6
+cp case_studies/cotton_fiber/cotton_fiber.zip /tmp/cotton_fiber-v6.zip
+gh release create cotton_fiber-v6 /tmp/cotton_fiber-v6.zip \
+  --title "Cotton Fiber v6"
 ```
 
 GitHub automatically attaches "Source code (zip/tar.gz)" links to any

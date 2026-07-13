@@ -1,0 +1,30 @@
+{
+  "@type": "ImpactCategory",
+  "@id": "0868f6d4-7ef8-4213-b340-1bb647d473b1",
+  "description": "acidification category for testing calculation engines only. CF matches TRACI v2.1 AP.",
+  "impactFactors": [
+    {
+      "flow": {
+        "@type": "Flow",
+        "@id": "06e7dab2-6744-4b03-83e6-470556234ebb",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "NH3"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      },
+      "value": 1.88
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:11.792802+00:00",
+  "name": "AP",
+  "refUnit": "kg SO2-eq",
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "ImpactMethod",
+  "@id": "9595df69-5977-4f98-8e0d-ad08df385de7",
+  "description": "LCIA method for cross-engine testing only. Not for real assessment.",
+  "impactCategories": [
+    {
+      "@type": "ImpactCategory",
+      "@id": "0e3eb7c2-735c-4316-a770-4f331d34bbbd",
+      "name": "GWP"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "11fe598c-64fc-4e81-a062-290a57eabac7",
+      "name": "MIR"
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:14.912247+00:00",
+  "name": "LCIA Method",
+  "version": "01.00.000"
+}

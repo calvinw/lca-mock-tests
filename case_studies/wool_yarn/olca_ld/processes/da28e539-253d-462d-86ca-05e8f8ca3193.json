@@ -1,0 +1,108 @@
+{
+  "@type": "Process",
+  "@id": "da28e539-253d-462d-86ca-05e8f8ca3193",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "0ebe3dc7-b72e-4da5-a61d-d2ff6d603a56",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Wool yarn"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.1,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "e29b86f0-b83d-47c3-82c5-90f280f8b167",
+        "name": "Sheep farming"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "1b262272-2b6d-4080-8d11-3f9ba966ab2c",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Raw wool"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 2.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "8bc9378b-d599-4747-b6be-be29826de4a8",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 3,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 30.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "ddd37d27-c355-4b37-991f-9dd7c094a253",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Water"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "name": "Volume"
+      },
+      "internalId": 4,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "b80a512e-e402-4363-8ad0-7d02dcf4a459",
+        "name": "l"
+      }
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:14.912220+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "b366d70e-4ef4-4951-b678-491050d466b6",
+    "name": "GLO"
+  },
+  "name": "Wool yarn production",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

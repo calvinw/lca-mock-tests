@@ -1,0 +1,62 @@
+{
+  "@type": "ProductSystem",
+  "@id": "24d28adc-164c-4046-be34-0b3083158b26",
+  "description": "Pre-linked product system for 1 kg of wool yarn.",
+  "lastChange": "2026-07-13T02:19:14.912230+00:00",
+  "name": "Wool yarn product system",
+  "processLinks": [
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "1b262272-2b6d-4080-8d11-3f9ba966ab2c",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Raw wool"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "da28e539-253d-462d-86ca-05e8f8ca3193",
+        "name": "Wool yarn production"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "e29b86f0-b83d-47c3-82c5-90f280f8b167",
+        "name": "Sheep farming"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "@type": "Process",
+      "@id": "e29b86f0-b83d-47c3-82c5-90f280f8b167",
+      "name": "Sheep farming"
+    },
+    {
+      "@type": "Process",
+      "@id": "da28e539-253d-462d-86ca-05e8f8ca3193",
+      "name": "Wool yarn production"
+    }
+  ],
+  "refExchange": {
+    "internalId": 1
+  },
+  "refProcess": {
+    "@type": "Process",
+    "@id": "da28e539-253d-462d-86ca-05e8f8ca3193",
+    "name": "Wool yarn production"
+  },
+  "targetAmount": 1.0,
+  "targetFlowProperty": {
+    "@type": "FlowProperty",
+    "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+    "name": "Mass"
+  },
+  "targetUnit": {
+    "@type": "Unit",
+    "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+    "name": "kg"
+  },
+  "version": "01.00.000"
+}

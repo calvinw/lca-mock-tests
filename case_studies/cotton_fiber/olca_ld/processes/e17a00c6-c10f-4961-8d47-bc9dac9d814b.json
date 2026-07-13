@@ -1,0 +1,59 @@
+{
+  "@type": "Process",
+  "@id": "e17a00c6-c10f-4961-8d47-bc9dac9d814b",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "c15f06d4-10f2-4e3c-8428-5ae5a643d7e6",
+        "flowType": "PRODUCT_FLOW",
+        "name": "N-fertilizer"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 3.5,
+      "flow": {
+        "@type": "Flow",
+        "@id": "9b1bee3e-8d4b-4157-98db-45c5d58d3848",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:11.792764+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "933289a1-5ea1-40eb-a530-58f2348b8950",
+    "name": "GLO"
+  },
+  "name": "Fertilizer production",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

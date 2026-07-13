@@ -1,0 +1,86 @@
+{
+  "@type": "Process",
+  "@id": "a38050cf-b1a9-4bb5-a983-86c8014fb9ad",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "e37321d9-1121-483b-8451-3cc8143d75a5",
+        "flowType": "PRODUCT_FLOW",
+        "name": "T-shirt"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+        "name": "unit"
+      }
+    },
+    {
+      "amount": 0.2,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "fb17cd47-f37d-497c-b165-fb9607d81044",
+        "name": "Polyester fiber production"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "506f5bda-9cd3-479c-badb-eab188321aee",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Polyester fiber"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "71b45404-3f02-4a21-a8b7-9403332f5a61",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 3,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-13T02:19:13.772143+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "436e44cc-73c2-4728-88ed-d3b2db47cefe",
+    "name": "GLO"
+  },
+  "name": "T-shirt assembly",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

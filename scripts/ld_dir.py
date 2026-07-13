@@ -18,6 +18,7 @@ _FOLDER_BY_TYPE = {
     o.Process: "processes",
     o.ImpactCategory: "lcia_categories",
     o.ImpactMethod: "lcia_methods",
+    o.ProductSystem: "product_systems",
     o.UnitGroup: "unit_groups",
 }
 

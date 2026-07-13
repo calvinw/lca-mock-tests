@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "ddd37d27-c355-4b37-991f-9dd7c094a253",
+  "category": "elementary flows/resource/water",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-22da-a746-0800200c9a66",
+        "name": "Volume"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-13T02:19:14.912193+00:00",
+  "name": "Water",
+  "version": "01.00.000"
+}
