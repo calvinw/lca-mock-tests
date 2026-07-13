@@ -20,6 +20,12 @@ Each diagram isolates one unit process. It shows its product and intermediate
 flows, plus any elementary flows crossing the system boundary: extractions from
 nature in green and emissions to the environment in red.
 
+This is the way a unit process might appear in the database: its numbers are
+the exchanges for one reference run of that process. They must be adjusted for
+how much of the process actually flows through the product graph. Multiply each
+exchange by the matching scaling factor in the scaled diagram to obtain its
+contribution to the functional-unit inventory.
+
 ### P1 — Fertilizer production
 
 ![P1 — Fertilizer production](p1.svg)
