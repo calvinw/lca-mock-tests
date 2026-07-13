@@ -37,7 +37,9 @@ Producing 1.0 kg of crude oil emits 0.2 kg of CO2 and 0.05 kg of CH4 to air.
 ![P2 — Polyester fiber production](p2.svg)
 
 Producing 1.0 kg of polyester fiber requires 1.5 kg of crude oil and emits
-5.5 kg of CO2 to air.
+5.5 kg of CO2 to air. Since the functional unit requires only 0.2 kg of
+polyester fiber, the scaled product graph requires `0.2 × 1.5 = 0.3 kg` of
+crude oil.
 
 ### P3 — T-shirt assembly
 
