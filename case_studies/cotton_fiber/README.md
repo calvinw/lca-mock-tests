@@ -30,9 +30,15 @@ contribution to the functional-unit inventory.
 
 ![P1 — Fertilizer production](p1.svg)
 
+Producing 1.0 kg of N-fertilizer emits 3.5 kg of CO2 to air.
+
 ### P2 — Cotton farming
 
 ![P2 — Cotton farming](p2.svg)
+
+Producing 1.0 kg of cotton fiber requires 0.2 kg of N-fertilizer and extracts
+8,000 L of water from nature. It emits 0.8 kg of CO2, 0.015 kg of N2O, and
+0.010 kg of NH3 to air.
 
 ## Scaled supply-chain diagram
 

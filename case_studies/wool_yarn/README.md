@@ -30,9 +30,14 @@ contribution to the functional-unit inventory.
 
 ![P1 — Sheep farming](p1.svg)
 
+Producing 1.0 kg of raw wool emits 0.5 kg of CO2 and 0.4 kg of CH4 to air.
+
 ### P2 — Wool yarn production
 
 ![P2 — Wool yarn production](p2.svg)
+
+Producing 1.0 kg of wool yarn requires 1.1 kg of raw wool and extracts 30 L
+of water from nature. It emits 2.0 kg of CO2 to air.
 
 ## Scaled supply-chain diagram
 

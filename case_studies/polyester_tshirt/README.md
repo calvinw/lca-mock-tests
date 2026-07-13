@@ -30,13 +30,21 @@ contribution to the functional-unit inventory.
 
 ![P1 — Oil extraction](p1.svg)
 
+Producing 1.0 kg of crude oil emits 0.2 kg of CO2 and 0.05 kg of CH4 to air.
+
 ### P2 — Polyester fiber production
 
 ![P2 — Polyester fiber production](p2.svg)
 
+Producing 1.0 kg of polyester fiber requires 1.5 kg of crude oil and emits
+5.5 kg of CO2 to air.
+
 ### P3 — T-shirt assembly
 
 ![P3 — T-shirt assembly](p3.svg)
+
+Producing 1 T-shirt requires 0.2 kg of polyester fiber and emits 1.0 kg of
+CO2 to air.
 
 ## Scaled supply-chain diagram
 
