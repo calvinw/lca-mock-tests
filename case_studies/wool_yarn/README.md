@@ -38,9 +38,12 @@ contribution to the functional-unit inventory.
 
 ![Scaled supply-chain diagram](scaled.svg)
 
-This version adds the flow amounts and the process scaling factors (`s_1`,
-`s_2`, and so on) used to produce the functional unit. Those factors are used
-in the inventory and LCIA calculations below.
+Each amount shown here comes from a calculation of exactly how much flows
+through the product graph to create one functional unit. These amounts can be
+thought of as the results of a calculation that starts at the functional unit
+and works backward through the product graph. The resulting process scaling
+factors (`s_1`, `s_2`, and so on) are used in the inventory and LCIA
+calculations below.
 
 ## Process scaling
 
