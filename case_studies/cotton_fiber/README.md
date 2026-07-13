@@ -8,7 +8,17 @@ Brightway.
 
 ![Supply-chain structure](structure.svg)
 
+This image shows the product graph with the flow types but without yet the
+actual flow amounts. Blue boxes are unit processes, gray arrows carry products
+or intermediate materials between them, and the purple box is the functional
+unit. Green arrows are extractions from nature; red arrows are emissions to the
+environment.
+
 ## Unit-process Diagrams (unscaled)
+
+Each diagram isolates one unit process. It shows its product and intermediate
+flows, plus any elementary flows crossing the system boundary: extractions from
+nature in green and emissions to the environment in red.
 
 ### P1 — Fertilizer production
 
@@ -21,6 +31,10 @@ Brightway.
 ## Scaled supply-chain diagram
 
 ![Scaled supply-chain diagram](scaled.svg)
+
+This version adds the flow amounts and the process scaling factors (`s_1`,
+`s_2`, and so on) used to produce the functional unit. Those factors are used
+in the inventory and LCIA calculations below.
 
 ## Process scaling
 
