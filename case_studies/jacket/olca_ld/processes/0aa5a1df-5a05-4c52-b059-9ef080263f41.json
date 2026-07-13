@@ -1,0 +1,81 @@
+{
+  "@type": "Process",
+  "@id": "0aa5a1df-5a05-4c52-b059-9ef080263f41",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "3febbdde-c44a-420c-93cd-da780775322c",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Raw fiber material"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 1.8,
+      "flow": {
+        "@type": "Flow",
+        "@id": "f9b1bffc-a14e-407b-855c-c997a129b00d",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.02,
+      "flow": {
+        "@type": "Flow",
+        "@id": "5bbdb7f2-0730-485e-84f2-cd0d0fcba4a5",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CH4"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 3,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-13T18:57:36.237333+00:00",
+  "location": {
+    "@type": "Location",
+    "@id": "b97acd2f-acc5-4cdd-b633-28e6a0444af1",
+    "name": "GLO"
+  },
+  "name": "Raw material extraction",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

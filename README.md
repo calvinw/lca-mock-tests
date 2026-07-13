@@ -95,6 +95,7 @@ even though the included LCIA categories do not characterize it.
 | Case study | Tests |
 |---|---|
 | `cotton_fiber` | 2-process chain with GWP, eutrophication, acidification, and particulate matter formation: N2O drives GWP, NH3 drives the other three categories, and water extraction tests a volume resource input. |
+| `jacket` | 5-process, 3-tier chain with a parallel zipper branch. Tests compound scaling over three upstream levels, multiple providers at jacket assembly, and methane/NOx contributions across five TRACI categories. |
 | `polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops, plus methane contributions to GWP and photochemical oxidant formation. |
 | `wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss), methane contributions to GWP and photochemical oxidant formation, and water extraction. |
 

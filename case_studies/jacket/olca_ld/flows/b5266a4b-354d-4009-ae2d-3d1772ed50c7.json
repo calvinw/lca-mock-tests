@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "b5266a4b-354d-4009-ae2d-3d1772ed50c7",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T18:57:36.237296+00:00",
+  "name": "Fiber",
+  "version": "01.00.000"
+}

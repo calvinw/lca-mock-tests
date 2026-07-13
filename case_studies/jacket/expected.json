@@ -1,0 +1,26 @@
+{
+  "reference_product": "Jacket",
+  "method_name": "LCIA Method",
+  "impact_category": "GWP",
+  "description": "Matches the jacket MCP case study. Hand calculations are documented in README.md.",
+  "scaling_vector": {
+    "Raw material extraction": 0.792,
+    "Spinning": 0.66,
+    "Fabric weaving": 0.6,
+    "Zipper production": 1.0,
+    "Jacket assembly": 1.0
+  },
+  "inventory": {
+    "CO2": 4.3176,
+    "CH4": 0.02244,
+    "NOx": 0.011
+  },
+  "impact_scores": {
+    "GWP": 4.8786,
+    "AP": 0.0077,
+    "EP": 0.00048719,
+    "MIR": 0.27305216287179485,
+    "PMFP": 0.00007944444444444444
+  },
+  "score": 4.8786
+}

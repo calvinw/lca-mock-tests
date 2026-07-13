@@ -1,0 +1,49 @@
+{
+  "@type": "ImpactCategory",
+  "@id": "4b5fc0aa-89ce-4810-a66e-ee56233d75e1",
+  "description": "Climate change category for testing calculation engines only. CFs match TRACI v2.1 GWP100.",
+  "impactFactors": [
+    {
+      "flow": {
+        "@type": "Flow",
+        "@id": "f9b1bffc-a14e-407b-855c-c997a129b00d",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CO2"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      },
+      "value": 1.0
+    },
+    {
+      "flow": {
+        "@type": "Flow",
+        "@id": "5bbdb7f2-0730-485e-84f2-cd0d0fcba4a5",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "CH4"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      },
+      "value": 25.0
+    }
+  ],
+  "lastChange": "2026-07-13T18:57:36.237380+00:00",
+  "name": "GWP",
+  "refUnit": "kg CO2-eq",
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "532511a3-22f0-49a9-9a28-9b5344e4dfe4",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T18:57:36.237304+00:00",
+  "name": "Zipper",
+  "version": "01.00.000"
+}

@@ -1,0 +1,30 @@
+{
+  "@type": "ImpactCategory",
+  "@id": "399fa337-f7c6-4a5b-8f2f-fd5341461677",
+  "description": "Particulate matter formation category for testing calculation engines only. CF matches TRACI v2.1 PMFP.",
+  "impactFactors": [
+    {
+      "flow": {
+        "@type": "Flow",
+        "@id": "ef858827-73ad-4d78-bcc5-d1f0317edf58",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "NOx"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      },
+      "value": 0.007222222222222222
+    }
+  ],
+  "lastChange": "2026-07-13T18:57:36.237395+00:00",
+  "name": "PMFP",
+  "refUnit": "kg PM2.5-eq",
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "ef858827-73ad-4d78-bcc5-d1f0317edf58",
+  "category": "elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-13T18:57:36.237320+00:00",
+  "name": "NOx",
+  "version": "01.00.000"
+}

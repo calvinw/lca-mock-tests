@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "3e63d052-4f5a-4c7a-ab96-c6ff2d92f040",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T18:57:36.237301+00:00",
+  "name": "Fabric",
+  "version": "01.00.000"
+}

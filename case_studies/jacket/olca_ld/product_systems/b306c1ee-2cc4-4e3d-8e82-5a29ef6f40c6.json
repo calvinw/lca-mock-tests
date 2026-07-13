@@ -1,0 +1,140 @@
+{
+  "@type": "ProductSystem",
+  "@id": "b306c1ee-2cc4-4e3d-8e82-5a29ef6f40c6",
+  "description": "Pre-linked product system for one jacket.",
+  "lastChange": "2026-07-13T18:57:36.237375+00:00",
+  "name": "Jacket product system",
+  "processLinks": [
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "3febbdde-c44a-420c-93cd-da780775322c",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Raw fiber material"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "21e896dd-dee4-4868-aef7-f105dfdbf8b4",
+        "name": "Spinning"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "0aa5a1df-5a05-4c52-b059-9ef080263f41",
+        "name": "Raw material extraction"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "b5266a4b-354d-4009-ae2d-3d1772ed50c7",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Fiber"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "97ca436c-bb9d-4503-8185-6796aa947e67",
+        "name": "Fabric weaving"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "21e896dd-dee4-4868-aef7-f105dfdbf8b4",
+        "name": "Spinning"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "3e63d052-4f5a-4c7a-ab96-c6ff2d92f040",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Fabric"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "3e3923f6-dee0-4624-b6ae-00307a267c3a",
+        "name": "Jacket assembly"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "97ca436c-bb9d-4503-8185-6796aa947e67",
+        "name": "Fabric weaving"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 3
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "532511a3-22f0-49a9-9a28-9b5344e4dfe4",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Zipper"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "3e3923f6-dee0-4624-b6ae-00307a267c3a",
+        "name": "Jacket assembly"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "3bad9bc7-65be-4dcd-8629-acb146b1d375",
+        "name": "Zipper production"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "@type": "Process",
+      "@id": "0aa5a1df-5a05-4c52-b059-9ef080263f41",
+      "name": "Raw material extraction"
+    },
+    {
+      "@type": "Process",
+      "@id": "21e896dd-dee4-4868-aef7-f105dfdbf8b4",
+      "name": "Spinning"
+    },
+    {
+      "@type": "Process",
+      "@id": "97ca436c-bb9d-4503-8185-6796aa947e67",
+      "name": "Fabric weaving"
+    },
+    {
+      "@type": "Process",
+      "@id": "3bad9bc7-65be-4dcd-8629-acb146b1d375",
+      "name": "Zipper production"
+    },
+    {
+      "@type": "Process",
+      "@id": "3e3923f6-dee0-4624-b6ae-00307a267c3a",
+      "name": "Jacket assembly"
+    }
+  ],
+  "refExchange": {
+    "internalId": 1
+  },
+  "refProcess": {
+    "@type": "Process",
+    "@id": "3e3923f6-dee0-4624-b6ae-00307a267c3a",
+    "name": "Jacket assembly"
+  },
+  "targetAmount": 1.0,
+  "targetFlowProperty": {
+    "@type": "FlowProperty",
+    "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+    "name": "Number of items"
+  },
+  "targetUnit": {
+    "@type": "Unit",
+    "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+    "name": "unit"
+  },
+  "version": "01.00.000"
+}

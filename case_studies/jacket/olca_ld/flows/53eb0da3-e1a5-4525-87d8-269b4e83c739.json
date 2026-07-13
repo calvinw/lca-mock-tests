@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "53eb0da3-e1a5-4525-87d8-269b4e83c739",
+  "category": "products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-13T18:57:36.237308+00:00",
+  "name": "Jacket",
+  "version": "01.00.000"
+}
