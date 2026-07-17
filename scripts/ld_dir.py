@@ -42,8 +42,13 @@ def zip_ld_dir(ld_dir, zpath):
     if os.path.exists(zpath):
         os.remove(zpath)
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as zf:
-        for root, _, files in os.walk(ld_dir):
-            for name in files:
+        for root, dirs, files in os.walk(ld_dir):
+            visible_files = [name for name in files if not name.startswith(".")]
+            if not dirs and not visible_files:
+                arcdir = os.path.relpath(root, ld_dir).replace(os.sep, "/")
+                if arcdir != ".":
+                    zf.writestr(f"{arcdir}/", "")
+            for name in visible_files:
                 full_path = os.path.join(root, name)
                 arcname = os.path.relpath(full_path, ld_dir)
                 zf.write(full_path, arcname)

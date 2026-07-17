@@ -1,0 +1,23 @@
+{
+  "background": "BAFU-2026 v1",
+  "foreground_database": "bafu plastic broom foreground",
+  "functional_unit": {
+    "amount": 1.0,
+    "flow": "Plastic broom",
+    "unit": "unit"
+  },
+  "method_name": "EF v3.1",
+  "openlca_relative_tolerance": 0.001,
+  "scores": {
+    "acidification | accumulated exceedance (AE)": {
+      "openlca_category": "Acidification",
+      "score": 0.006516547154900909,
+      "unit": "mol H+-Eq"
+    },
+    "climate change | global warming potential (GWP100)": {
+      "openlca_category": "Climate change",
+      "score": 1.7089725281835535,
+      "unit": "kg CO2-Eq"
+    }
+  }
+}

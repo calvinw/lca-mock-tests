@@ -80,6 +80,13 @@ doesn't match `expected.json`.
 
 ## Phase 2 — Test the actual production import pattern: foreground-after-background
 
+The first real-background integration fixture now lives at
+`bafu_case_studies/plastic_broom`. It imports a foreground-only JSON-LD
+package after BAFU-2026 v1, maps three external provider UUIDs to the existing
+Brightway `bafu` database, and checks EF v3.1 results. The synthetic split-case
+tasks below remain useful for a small CI fixture and for implementing generic
+biosphere linking without requiring BAFU.
+
 This is the highest-value remaining gap, because it's the one that
 mirrors the real BAFU workflow (background imported once, foreground case
 studies layered on top) and it's the one already known to break with

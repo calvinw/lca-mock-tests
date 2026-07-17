@@ -47,6 +47,13 @@ case_studies/
                        and LCIA scores by hand
     mock_lca.zip     — regenerated on demand from olca_ld/, gitignored
     <case_name>.zip  — identical, release-ready asset with a descriptive name
+bafu_case_studies/
+  plastic_broom/
+    build.py         — builds a foreground-only JSON-LD package
+    providers.json   — pins openLCA UUIDs and Brightway BAFU activity codes
+    olca_ld/         — expanded JSON-LD foreground source
+    expected.json    — expected EF v3.1 integration scores
+    README.md        — Brightway and openLCA test instructions
 scripts/
   ld_dir.py                — shared helper: writes olca_schema entities to
                               an expanded JSON-LD dir, and zips that dir
@@ -56,6 +63,8 @@ scripts/
   run_check.py             — checks all expected LCIA scores with bw2calc
   check_case_study.py      — checks JSON-LD scaling links and inventory,
                               imports into Brightway, then checks LCIA scores
+  import_bafu_foreground.py — links JSON-LD exchanges to an installed BAFU DB
+  check_bafu_case_study.py  — runs the BAFU-backed integration calculation
 ```
 
 ## Quick start
@@ -83,6 +92,64 @@ uv run python scripts/make_release.py case_studies/cotton_fiber
 uv run python scripts/check_case_study.py case_studies/cotton_fiber
 ```
 
+The BAFU-backed integration fixture is intentionally separate from the
+hand-computable synthetic suite:
+
+```bash
+make bafu-build CASE=plastic_broom
+make bafu-release CASE=plastic_broom
+make bafu-check CASE=plastic_broom
+```
+
+Place the downloaded source packages under the gitignored `source_data/` tree:
+
+```text
+source_data/
+  bafu/
+    BAFU-2026 v1_ecoSpold v1.zip
+    BAFU-2026 v1_openLCA.zip
+  methods/
+    openLCA LCIA Methods 2.8.0 2025-12-15.zip
+```
+
+`bafu-check` verifies the EcoSpold checksum and prepares a pristine Brightway
+project under `.brightway-test-cache/` on its first run. It then copies that
+template to a disposable project, imports and calculates the foreground, and
+deletes the disposable project. Run `make bafu-prepare` to build only the
+pristine cache. No existing MCP-server Brightway project is used or modified.
+
+### Automated openLCA IPC checks
+
+Docker must be running. The IPC checks start a disposable openLCA server and
+database, import the foreground JSON-LD, create the product system through the
+IPC API, calculate it, compare the results with `expected.json`, and remove the
+container and temporary database afterward:
+
+```bash
+make openlca-foreground                 # all four self-contained mock cases
+make openlca-foreground CASE=jacket     # one self-contained case
+make openlca-bafu CASE=plastic_broom    # BAFU-backed integration case
+make openlca-check                      # both suites
+```
+
+The openLCA BAFU check reads these local archives by default:
+
+- `source_data/bafu/BAFU-2026 v1_openLCA.zip`
+- `source_data/methods/openLCA LCIA Methods 2.8.0 2025-12-15.zip`
+
+Use `--bafu-archive` and `--methods-archive` with
+`scripts/check_openlca.py` to override them. Both checksums are verified. The
+BAFU archive is extracted to the gitignored `.openlca-test-cache/`; each run
+copies that pristine template, so the source archive and desktop openLCA
+databases are never modified.
+
+The first run builds a pinned openLCA 2.7 development server image and reuses
+GreenDelta's pinned native UMFPACK/OpenBLAS server layer. The native layer is
+required for realistic background-database performance: on the plastic-broom
+fixture the 4,551-process calculation takes about five seconds, whereas the
+pure-Java fallback takes minutes. Building and running this layer uses
+`linux/amd64`, including through Docker's emulation on Apple Silicon.
+
 To test the same zip in **openLCA**: File → Import → openLCA JSON-LD Zip
 File → select a case study's descriptively named zip → open the included product
 system under **Product systems** → Calculate → compare the result to
@@ -98,6 +165,12 @@ even though the included LCIA categories do not characterize it.
 | `jacket` | 5-process, 3-tier chain with a parallel zipper branch. Tests compound scaling over three upstream levels, multiple providers at jacket assembly, and methane/NOx contributions across five TRACI categories. |
 | `polyester_tshirt` | 3-process chain (2 levels deep), compound scaling across two supply-chain hops, plus methane contributions to GWP and photochemical oxidant formation. |
 | `wool_yarn` | 2-process chain, tests a >1.0 scaling factor (process loss), methane contributions to GWP and photochemical oxidant formation, and water extraction. |
+
+## BAFU integration case studies
+
+| Case study | Tests |
+|---|---|
+| `plastic_broom` | Imports a foreground-only JSON-LD process after BAFU-2026 v1, links PLA, nylon 6, and freight to three real BAFU providers, and checks EF v3.1 climate change and acidification. |
 
 ## Releases
 
@@ -125,12 +198,12 @@ suppressed per-release.
 
 ## Known gaps (see `PLAN.md` for the full roadmap)
 
-- `bw2io`'s JSON-LD importer only links technosphere/production edges
+- `bw2io`'s stock JSON-LD importer only links technosphere/production edges
   *within the same import batch*, and only links biosphere edges against a
   biosphere database built fresh from the current import's own flows —
-  neither links against a database written by a *previous* import. A
-  foreground-imported-after-background scenario (the real BAFU workflow)
-  needs custom linking strategies added on top of the default import.
+  neither links against a database written by a *previous* import. The BAFU
+  plastic-broom fixture adds a UUID-to-Brightway-code linking layer for its
+  technosphere inputs. A generic external biosphere linker is still pending.
 - No allocation/co-product test case yet. Brightway-side allocation would
   use the separate `multifunctional` package; openLCA has native allocation
   method support in the schema itself (`AllocationFactor`/`AllocationType`).

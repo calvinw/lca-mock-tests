@@ -86,6 +86,9 @@ eventually be checked against, not the compiler itself.
 
 - Case study folder name = snake_case and matches the reference product's
   rough identity (`cotton_fiber`, `polyester_tshirt`, etc.).
+- Real-background integration fixtures live under `bafu_case_studies/`, not
+  under the hand-computable `case_studies/` suite. Keep BAFU immutable: these
+  packages contain foreground entities and external references only.
 - Flow/process names use concise domain names without a `Mock` prefix; the
   repository context identifies these as synthetic test datasets.
 - Commit `build.py`, `expected.json`, and the `olca_ld/` directory. Never

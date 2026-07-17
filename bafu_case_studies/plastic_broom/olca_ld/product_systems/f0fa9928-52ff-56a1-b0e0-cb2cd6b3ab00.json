@@ -1,0 +1,125 @@
+{
+  "@type": "ProductSystem",
+  "@id": "f0fa9928-52ff-56a1-b0e0-cb2cd6b3ab00",
+  "description": "Foreground-only seed containing the three direct BAFU links. Import BAFU-2026 v1 first, then create an automatically linked product system from the assembly process to include BAFU's upstream graph.",
+  "lastChange": "2026-07-16T00:00:00Z",
+  "name": "Plastic broom \u2014 BAFU-2026 v1 (foreground seed)",
+  "processLinks": [
+    {
+      "exchange": {
+        "internalId": 2
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "8dc4b12e-daca-356a-bb9e-83f3f2067980",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Polylactide, granulate, at plant"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "d7d9a3e4-5321-54e8-8c61-9bdfc255a944",
+        "name": "Plastic broom assembly",
+        "processType": "UNIT_PROCESS"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "31415a75-9d7e-37e3-aaec-b30c994868cd",
+        "name": "Polylactide, granulate, at plant",
+        "processType": "UNIT_PROCESS"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 3
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "2c391fb8-db89-3c5d-80a4-6e5748ec41ef",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Nylon 6, at plant"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "d7d9a3e4-5321-54e8-8c61-9bdfc255a944",
+        "name": "Plastic broom assembly",
+        "processType": "UNIT_PROCESS"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "a22a1218-236e-32ca-8e90-302962a36fb5",
+        "name": "Nylon 6, at plant",
+        "processType": "UNIT_PROCESS"
+      }
+    },
+    {
+      "exchange": {
+        "internalId": 4
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "92f1a04f-c637-3a36-b7f5-7df5e5ac3408",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Transport, freight, lorry, 16t-32t gross weight, fleet average"
+      },
+      "process": {
+        "@type": "Process",
+        "@id": "d7d9a3e4-5321-54e8-8c61-9bdfc255a944",
+        "name": "Plastic broom assembly",
+        "processType": "UNIT_PROCESS"
+      },
+      "provider": {
+        "@type": "Process",
+        "@id": "85b3a5a6-2635-3546-b51b-4ccad397650b",
+        "name": "Transport, freight, lorry, 16t-32t gross weight, fleet average",
+        "processType": "UNIT_PROCESS"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "@type": "Process",
+      "@id": "d7d9a3e4-5321-54e8-8c61-9bdfc255a944",
+      "name": "Plastic broom assembly",
+      "processType": "UNIT_PROCESS"
+    },
+    {
+      "@type": "Process",
+      "@id": "31415a75-9d7e-37e3-aaec-b30c994868cd",
+      "name": "Polylactide, granulate, at plant",
+      "processType": "UNIT_PROCESS"
+    },
+    {
+      "@type": "Process",
+      "@id": "a22a1218-236e-32ca-8e90-302962a36fb5",
+      "name": "Nylon 6, at plant",
+      "processType": "UNIT_PROCESS"
+    },
+    {
+      "@type": "Process",
+      "@id": "85b3a5a6-2635-3546-b51b-4ccad397650b",
+      "name": "Transport, freight, lorry, 16t-32t gross weight, fleet average",
+      "processType": "UNIT_PROCESS"
+    }
+  ],
+  "refExchange": {
+    "internalId": 1
+  },
+  "refProcess": {
+    "@type": "Process",
+    "@id": "d7d9a3e4-5321-54e8-8c61-9bdfc255a944",
+    "name": "Plastic broom assembly",
+    "processType": "UNIT_PROCESS"
+  },
+  "targetAmount": 1.0,
+  "targetFlowProperty": {
+    "@type": "FlowProperty",
+    "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+    "name": "Number of items"
+  },
+  "targetUnit": {
+    "@type": "Unit",
+    "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+    "name": "unit"
+  },
+  "version": "01.00.000"
+}

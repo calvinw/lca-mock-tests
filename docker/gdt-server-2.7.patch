@@ -1,0 +1,68 @@
+diff --git a/src/main/java/org/openlca/gdt/server/DataRequest.java b/src/main/java/org/openlca/gdt/server/DataRequest.java
+index d6ff020..5f132e1 100644
+--- a/src/main/java/org/openlca/gdt/server/DataRequest.java
++++ b/src/main/java/org/openlca/gdt/server/DataRequest.java
+@@ -20,7 +20,6 @@ import org.openlca.core.model.RootEntity;
+ import org.openlca.core.model.SocialIndicator;
+ import org.openlca.core.model.Source;
+ import org.openlca.core.model.UnitGroup;
+-import org.openlca.util.Strings;
+ 
+ class DataRequest {
+ 
+@@ -41,7 +40,7 @@ class DataRequest {
+ 	 */
+ 	static String resolveId(Context ctx) {
+ 		var id = ctx.pathParam("id");
+-		if (Strings.nullOrEmpty(id)) {
++		if (id == null || id.isEmpty()) {
+ 			Http.sendBadRequest(ctx, "no ID provided");
+ 			return null;
+ 		}
+@@ -56,7 +55,7 @@ class DataRequest {
+ 	@SuppressWarnings("unchecked")
+ 	static <T extends RootEntity> Class<T> resolveType(Context ctx) {
+ 		var path = ctx.pathParam("type-path");
+-		if (Strings.nullOrEmpty(path)) {
++		if (path == null || path.isEmpty()) {
+ 			Http.sendBadRequest(ctx, "No model path provided");
+ 			return null;
+ 		}
+diff --git a/src/main/java/org/openlca/gdt/server/DataService.java b/src/main/java/org/openlca/gdt/server/DataService.java
+index 283ad91..e4799e3 100644
+--- a/src/main/java/org/openlca/gdt/server/DataService.java
++++ b/src/main/java/org/openlca/gdt/server/DataService.java
+@@ -4,7 +4,6 @@ import io.javalin.http.Context;
+ import org.openlca.core.database.IDatabase;
+ import org.openlca.core.services.JsonDataService;
+ import org.openlca.jsonld.Json;
+-import org.openlca.util.Strings;
+ 
+ class DataService {
+ 
+@@ -43,7 +42,7 @@ class DataService {
+ 		if (type == null)
+ 			return;
+ 		var name = ctx.pathParam("name");
+-		if (Strings.nullOrEmpty(name)) {
++		if (name == null || name.isEmpty()) {
+ 			Http.sendBadRequest(ctx, "no name provided");
+ 			return;
+ 		}
+diff --git a/src/main/java/org/openlca/gdt/server/Server.java b/src/main/java/org/openlca/gdt/server/Server.java
+index a8166db..3721315 100644
+--- a/src/main/java/org/openlca/gdt/server/Server.java
++++ b/src/main/java/org/openlca/gdt/server/Server.java
+@@ -17,10 +17,9 @@ public class Server {
+ 		var results = new ResultService(config);
+ 
+ 		var app = Javalin.create(c -> {
+-			if (config.staticDir() != null) {
++			config.staticDir().ifPresent(dir ->
+ 				c.staticFiles.add(
+-					config.staticDir().getAbsolutePath(), Location.EXTERNAL);
+-			}
++					dir.getAbsolutePath(), Location.EXTERNAL));
+ 			c.bundledPlugins.enableCors(cors -> cors.addRule(it -> it.anyHost()));
+ 			c.jetty.modifyHttpConfiguration(httpConfig -> {
+ 				httpConfig.setRequestHeaderSize(16384);

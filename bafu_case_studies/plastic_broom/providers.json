@@ -1,0 +1,42 @@
+{
+  "background": {
+    "name": "BAFU-2026 v1",
+    "ecospold_archive": "BAFU-2026 v1_ecoSpold v1.zip",
+    "ecospold_archive_sha256": "ebaab56717a6227b5eb271fcb4c86fb9db206115eb937fb0ec0b10d7accf26c7",
+    "openlca_archive": "BAFU-2026 v1_openLCA.zip",
+    "openlca_archive_sha256": "f6d86cd299110d2fb194c0fc5ec49832cec6995a6dfa185f045e09bcd83359fc",
+    "brightway_database": "bafu"
+  },
+  "providers": [
+    {
+      "amount": 0.52,
+      "brightway_code": "273090",
+      "flow_name": "Polylactide, granulate, at plant",
+      "flow_uuid": "8dc4b12e-daca-356a-bb9e-83f3f2067980",
+      "location": "GLO",
+      "process_name": "Polylactide, granulate, at plant",
+      "process_uuid": "31415a75-9d7e-37e3-aaec-b30c994868cd",
+      "unit": "kg"
+    },
+    {
+      "amount": 0.03,
+      "brightway_code": "399817",
+      "flow_name": "Nylon 6, at plant",
+      "flow_uuid": "2c391fb8-db89-3c5d-80a4-6e5748ec41ef",
+      "location": "RER",
+      "process_name": "Nylon 6, at plant",
+      "process_uuid": "a22a1218-236e-32ca-8e90-302962a36fb5",
+      "unit": "kg"
+    },
+    {
+      "amount": 0.1055,
+      "brightway_code": "355963",
+      "flow_name": "Transport, freight, lorry, 16t-32t gross weight, fleet average",
+      "flow_uuid": "92f1a04f-c637-3a36-b7f5-7df5e5ac3408",
+      "location": "RER",
+      "process_name": "Transport, freight, lorry, 16t-32t gross weight, fleet average",
+      "process_uuid": "85b3a5a6-2635-3546-b51b-4ccad397650b",
+      "unit": "tkm"
+    }
+  ]
+}

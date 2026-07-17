@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "e579d720-9c77-518f-8416-506afe1bba69",
+  "category": "BAFU integration examples/products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-16T00:00:00Z",
+  "name": "Plastic broom",
+  "version": "01.00.000"
+}

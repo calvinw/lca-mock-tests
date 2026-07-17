@@ -1,7 +1,9 @@
 CASE_STUDIES := $(notdir $(wildcard case_studies/*))
 RUN := uv run python
 
-.PHONY: build release check clean all all-build all-release all-check all-clean
+.PHONY: build release check clean all all-build all-release all-check all-clean \
+	bafu-build bafu-release bafu-prepare bafu-check bafu-clean openlca-check openlca-foreground \
+	openlca-bafu
 
 # Usage: make build CASE=cotton_fiber
 build:
@@ -15,6 +17,31 @@ check:
 
 clean:
 	rm -rf case_studies/$(CASE)/.bw_project case_studies/$(CASE)/_extracted case_studies/$(CASE)/mock_lca.zip case_studies/$(CASE)/$(CASE).zip
+
+bafu-build:
+	$(RUN) bafu_case_studies/$(CASE)/build.py
+
+bafu-release:
+	$(RUN) scripts/make_release.py bafu_case_studies/$(CASE) $(CASE)_bafu
+
+bafu-prepare:
+	$(RUN) scripts/prepare_bafu_brightway.py
+
+bafu-check:
+	$(RUN) scripts/check_bafu_case_study.py bafu_case_studies/$(CASE)
+
+bafu-clean:
+	rm -rf bafu_case_studies/$(CASE)/mock_lca.zip bafu_case_studies/$(CASE)/$(CASE)_bafu.zip
+
+# End-to-end checks in a disposable openLCA gdt-server database.
+openlca-check:
+	$(RUN) scripts/check_openlca.py all
+
+openlca-foreground:
+	$(RUN) scripts/check_openlca.py foreground $(if $(CASE),--case $(CASE),)
+
+openlca-bafu:
+	$(RUN) scripts/check_openlca.py bafu $(if $(CASE),--case $(CASE),)
 
 # Build + release + check every case study
 all: all-build all-release all-check
