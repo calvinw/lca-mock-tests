@@ -14,25 +14,25 @@ import json
 def run_and_check(bw_dir, project_name, db_name, method_name, impact_category,
                    product_name, expected_path):
     os.environ["BRIGHTWAY2_DIR"] = bw_dir
-    import bw2data as bd
-    bd.projects.set_current(project_name)
-    import bw2calc as bc
-
-    db = bd.Database(db_name)
-    product = next(a for a in db if a["name"] == product_name and a.get("type") == "product")
+    from lca_core import LCAEngine
 
     expected = json.load(open(expected_path))
     expected_scores = expected.get("impact_scores", {impact_category: expected["score"]})
     ok = True
+    engine = LCAEngine()
     for category, expected_score in expected_scores.items():
-        method = (method_name, category)
-        lca = bc.LCA(demand={product: 1}, method=method)
-        lca.lci()
-        lca.lcia()
-        matches = abs(lca.score - expected_score) < 1e-6
+        result = engine.calculate_imported_activity(
+            db_name,
+            method_name,
+            category,
+            project=project_name,
+            product_name=product_name,
+        )
+        actual = result["score"]
+        matches = abs(actual - expected_score) < 1e-6
         ok = ok and matches
         print(
-            f"{category}: {lca.score}  Expected: {expected_score}  "
+            f"{category}: {actual}  Expected: {expected_score}  "
             f"{'OK' if matches else 'MISMATCH'}"
         )
     return ok

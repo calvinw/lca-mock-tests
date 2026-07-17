@@ -7,8 +7,6 @@ Usage:
 """
 import os
 import sys
-import zipfile
-import shutil
 
 def import_jsonld(zip_path, db_name, project_name, bw_dir=None):
     if bw_dir is None:
@@ -16,36 +14,14 @@ def import_jsonld(zip_path, db_name, project_name, bw_dir=None):
     os.makedirs(bw_dir, exist_ok=True)
     os.environ["BRIGHTWAY2_DIR"] = bw_dir
 
-    extract_dir = os.path.join(os.path.dirname(zip_path), "_extracted")
-    if os.path.exists(extract_dir):
-        shutil.rmtree(extract_dir)
-    os.makedirs(extract_dir)
-    with zipfile.ZipFile(zip_path) as z:
-        z.extractall(extract_dir)
-    # bw2io's extractor requires this key to exist even if empty
-    os.makedirs(os.path.join(extract_dir, "locations"), exist_ok=True)
+    from lca_core import LCAEngine
 
-    import bw2data as bd
-    bd.projects.set_current(project_name)
-    for db in list(bd.databases):
-        del bd.databases[db]
-    for m in list(bd.methods):
-        del bd.methods[m]
-
-    from bw2io.importers.json_ld import JSONLDImporter
-    from bw2io.importers.json_ld_lcia import JSONLDLCIAImporter
-
-    imp = JSONLDImporter(extract_dir, db_name)
-    imp.apply_strategies(no_warning=True)
-    imp.statistics()
-    imp.write_separate_biosphere_database()
-    imp.write_database()
-
-    lcia_imp = JSONLDLCIAImporter(extract_dir)
-    lcia_imp.apply_strategies()
-    lcia_imp.match_biosphere_by_id(f"{db_name} biosphere")
-    lcia_imp.statistics()
-    lcia_imp.write_methods()
+    LCAEngine().import_jsonld(
+        zip_path,
+        db_name,
+        project=project_name,
+        replace_project_data=True,
+    )
 
     return bw_dir
 

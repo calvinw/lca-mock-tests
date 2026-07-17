@@ -59,8 +59,8 @@ scripts/
                               an expanded JSON-LD dir, and zips that dir
   make_release.py          — creates mock_lca.zip and a release-ready
                               <case_name>.zip from olca_ld/
-  import_to_brightway.py   — generic JSON-LD zip → Brightway project importer
-  run_check.py             — checks all expected LCIA scores with bw2calc
+  import_to_brightway.py   — imports JSON-LD through the reusable LCA engine
+  run_check.py             — checks expected scores through lca_core.LCAEngine
   check_case_study.py      — checks JSON-LD scaling links and inventory,
                               imports into Brightway, then checks LCIA scores
   import_bafu_foreground.py — links JSON-LD exchanges to an installed BAFU DB
@@ -72,6 +72,11 @@ scripts/
 Dependencies are managed with [`uv`](https://docs.astral.sh/uv/) via
 `pyproject.toml` — `uv sync` creates an isolated `.venv/` the first time you
 run any command below.
+
+The Brightway path consumes the reusable `lca_core` package from
+`life-cycle-assessment-mcp`; it does not invoke the MCP transport. The openLCA
+path remains an independent IPC calculation, so both engines consume the same
+JSON-LD fixtures through their native import paths.
 
 ```bash
 # Build, release (zip), and check every case study
@@ -114,8 +119,9 @@ source_data/
 
 `bafu-check` verifies the EcoSpold checksum and prepares a pristine Brightway
 project under `.brightway-test-cache/` on its first run. It then copies that
-template to a disposable project, imports and calculates the foreground, and
-deletes the disposable project. Run `make bafu-prepare` to build only the
+template to a disposable project, imports the foreground, calculates it
+through `lca_core.LCAEngine`, and deletes the disposable project. Run
+`make bafu-prepare` to build only the
 pristine cache. No existing MCP-server Brightway project is used or modified.
 
 ### Automated openLCA IPC checks

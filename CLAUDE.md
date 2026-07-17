@@ -119,8 +119,9 @@ make check   CASE=cotton_fiber
 make clean   CASE=cotton_fiber   # removes imported projects and generated ZIPs
 ```
 `make check`/`all-check` runs `scripts/check_case_study.py`, which imports
-the zip into a fresh Brightway project and diffs the computed score against
-`expected.json`, using the `reference_product`/`method_name`/
-`impact_category` recorded there. This is a manual step run via the
-Makefile, not yet wired into GitHub Actions CI — see roadmap Phase 1 in
-`PLAN.md`.
+the zip into a fresh Brightway project through the reusable `lca_core`
+package and diffs the score computed by `LCAEngine` against `expected.json`,
+using the `reference_product`/`method_name`/`impact_category` recorded there.
+The openLCA path remains independent and calculates through IPC. This is a
+manual step run via the Makefile, not yet wired into GitHub Actions CI — see
+roadmap Phase 1 in `PLAN.md`.

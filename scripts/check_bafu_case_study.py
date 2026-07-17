@@ -22,8 +22,8 @@ def main():
 
     template_project = prepare()
 
-    import bw2calc as bc
     import bw2data as bd
+    from lca_core import LCAEngine
 
     from import_bafu_foreground import import_bafu_foreground
 
@@ -78,20 +78,18 @@ def main():
         )
 
     method_name = expected["method_name"]
-    methods = {
-        " | ".join(method[1:]): method
-        for method in bd.methods
-        if method and method[0] == method_name
-    }
+    engine = LCAEngine()
     results = {}
     for category, target in expected["scores"].items():
-        method = methods.get(category)
-        if method is None:
-            raise RuntimeError(f"LCIA category '{method_name} | {category}' is not installed")
-        lca = bc.LCA({product: expected["functional_unit"]["amount"]}, method)
-        lca.lci()
-        lca.lcia()
-        actual = float(lca.score)
+        result = engine.calculate_imported_activity(
+            foreground_database,
+            method_name,
+            category,
+            project=test_project,
+            code=product["code"],
+            amount=expected["functional_unit"]["amount"],
+        )
+        actual = result["score"]
         wanted = target["score"]
         if not math.isclose(actual, wanted, rel_tol=1e-8, abs_tol=1e-10):
             raise AssertionError(
@@ -99,7 +97,7 @@ def main():
             )
         results[category] = {
             "score": actual,
-            "unit": bd.methods[method].get("unit", ""),
+            "unit": result["unit"],
         }
 
     print(f"Linked {len(linked)} foreground exchanges to '{args.background_database}'")
