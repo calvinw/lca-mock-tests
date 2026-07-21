@@ -1,0 +1,8 @@
+{
+  "@type": "Location",
+  "@id": "e55b38c2-a4ce-55b1-ae3a-b44e8c911032",
+  "code": "MOCK",
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "Mock location",
+  "version": "01.00.000"
+}

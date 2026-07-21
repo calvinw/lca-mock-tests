@@ -1,0 +1,30 @@
+{
+  "@type": "ImpactCategory",
+  "@id": "46cfeccc-4eaa-59a4-a517-30c95adbaef0",
+  "description": "Mock subset for deterministic engine comparison.",
+  "impactFactors": [
+    {
+      "flow": {
+        "@type": "Flow",
+        "@id": "9cb73a6a-137e-5568-9b34-dc3b62eaffd0",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Carbon dioxide, fossil"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      },
+      "value": 1.0
+    }
+  ],
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "climate change | global warming potential (GWP100)",
+  "refUnit": "kg CO2-Eq",
+  "version": "01.00.000"
+}

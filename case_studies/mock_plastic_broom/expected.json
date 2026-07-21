@@ -1,0 +1,21 @@
+{
+  "reference_product": "Mock plastic broom",
+  "method_name": "Mock EF v3.1 subset",
+  "impact_category": "climate change | global warming potential (GWP100)",
+  "description": "Hand-computable mock background chain shared with the LCA REST engine example.",
+  "scaling_vector": {
+    "Mock grid electricity, medium voltage": 1.04844,
+    "Mock polypropylene granulate, at plant": 0.52,
+    "Mock freight transport, small truck": 0.1055,
+    "Mock plastic broom assembly": 1.0
+  },
+  "inventory": {
+    "Carbon dioxide, fossil": 0.948871,
+    "Sulfur dioxide": 0.000585082
+  },
+  "impact_scores": {
+    "climate change | global warming potential (GWP100)": 0.948871,
+    "acidification | accumulated exceedance (AE)": 0.00076645742
+  },
+  "score": 0.948871
+}

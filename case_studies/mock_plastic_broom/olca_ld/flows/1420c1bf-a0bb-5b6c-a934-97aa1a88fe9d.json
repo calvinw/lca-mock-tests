@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "1420c1bf-a0bb-5b6c-a934-97aa1a88fe9d",
+  "category": "Mock background/elementary flows/air",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "ELEMENTARY_FLOW",
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "Sulfur dioxide",
+  "version": "01.00.000"
+}

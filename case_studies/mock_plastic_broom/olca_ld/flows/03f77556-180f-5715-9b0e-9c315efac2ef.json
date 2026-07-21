@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "03f77556-180f-5715-9b0e-9c315efac2ef",
+  "category": "Mock background/products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "Mock electricity, medium voltage",
+  "version": "01.00.000"
+}

@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "1cec931e-b729-5f2c-9833-70a8a6da4b28",
+  "category": "Mock background/products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "Mock freight transport",
+  "version": "01.00.000"
+}

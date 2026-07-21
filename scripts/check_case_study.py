@@ -30,21 +30,31 @@ def check_source(case_dir, expected):
     scaling = expected["scaling_vector"]
     ok = True
 
+    requirements = {}
+    consumers = {}
     for process in processes:
-        actual = scaling[process["name"]]
+        consumer_scale = scaling[process["name"]]
         for exchange in process.get("exchanges", []):
             provider = exchange.get("defaultProvider")
             if not exchange.get("isInput") or not provider:
                 continue
-            required = actual * exchange["amount"]
-            supplied = scaling[process_by_id[provider["@id"]]["name"]]
-            matches = abs(required - supplied) < 1e-9
-            ok = ok and matches
-            print(
-                f"Scaling link {provider['name']} -> {process['name']}: "
-                f"{supplied} supplied, {required} required  "
-                f"{'OK' if matches else 'MISMATCH'}"
+            provider_id = provider["@id"]
+            requirements[provider_id] = requirements.get(provider_id, 0.0) + (
+                consumer_scale * exchange["amount"]
             )
+            consumers.setdefault(provider_id, []).append(process["name"])
+
+    for provider_id, required in requirements.items():
+        provider_name = process_by_id[provider_id]["name"]
+        supplied = scaling[provider_name]
+        matches = abs(required - supplied) < 1e-9
+        ok = ok and matches
+        print(
+            f"Scaling supply {provider_name} -> "
+            f"{', '.join(consumers[provider_id])}: "
+            f"{supplied} supplied, {required} required  "
+            f"{'OK' if matches else 'MISMATCH'}"
+        )
 
     inventory = {}
     resource_inputs = set()

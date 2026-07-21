@@ -1,0 +1,111 @@
+{
+  "@type": "Process",
+  "@id": "5237b96f-fd02-5a3c-85ac-1d0a3a2d9528",
+  "category": "Mock background/processes",
+  "description": "Fictional unit process for cross-engine tests only.",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "1cec931e-b729-5f2c-9833-70a8a6da4b28",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock freight transport"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "0dea4ed8-bb6b-4049-b2b4-b2c413ef2180",
+        "name": "tkm"
+      }
+    },
+    {
+      "amount": 0.08,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "3ddfacfd-4a54-5222-aed9-d2ed3a8691de",
+        "name": "Mock grid electricity, medium voltage",
+        "processType": "UNIT_PROCESS"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "03f77556-180f-5715-9b0e-9c315efac2ef",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock electricity, medium voltage"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "f6811440-ee37-11de-8a39-0800200c9a66",
+        "name": "Energy"
+      },
+      "internalId": 2,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "86ad2244-1f0e-4912-af53-7865283103e4",
+        "name": "kWh"
+      }
+    },
+    {
+      "amount": 0.09,
+      "flow": {
+        "@type": "Flow",
+        "@id": "9cb73a6a-137e-5568-9b34-dc3b62eaffd0",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Carbon dioxide, fossil"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 3,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.0001,
+      "flow": {
+        "@type": "Flow",
+        "@id": "1420c1bf-a0bb-5b6c-a934-97aa1a88fe9d",
+        "flowType": "ELEMENTARY_FLOW",
+        "name": "Sulfur dioxide"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 4,
+      "isInput": false,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    }
+  ],
+  "lastChange": "2026-07-20T00:00:00Z",
+  "location": {
+    "@type": "Location",
+    "@id": "e55b38c2-a4ce-55b1-ae3a-b44e8c911032",
+    "name": "Mock location"
+  },
+  "name": "Mock freight transport, small truck",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

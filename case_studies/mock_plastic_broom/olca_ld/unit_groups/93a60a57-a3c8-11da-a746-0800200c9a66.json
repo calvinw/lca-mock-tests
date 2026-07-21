@@ -1,0 +1,15 @@
+{
+  "@type": "UnitGroup",
+  "@id": "93a60a57-a3c8-11da-a746-0800200c9a66",
+  "lastChange": "2026-07-20T00:00:00Z",
+  "name": "Units of energy",
+  "units": [
+    {
+      "@id": "86ad2244-1f0e-4912-af53-7865283103e4",
+      "conversionFactor": 1.0,
+      "isRefUnit": true,
+      "name": "kWh"
+    }
+  ],
+  "version": "01.00.000"
+}
