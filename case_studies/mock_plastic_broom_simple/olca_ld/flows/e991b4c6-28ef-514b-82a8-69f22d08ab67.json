@@ -1,0 +1,20 @@
+{
+  "@type": "Flow",
+  "@id": "e991b4c6-28ef-514b-82a8-69f22d08ab67",
+  "category": "Mock background/products",
+  "flowProperties": [
+    {
+      "conversionFactor": 1.0,
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "isRefFlowProperty": true
+    }
+  ],
+  "flowType": "PRODUCT_FLOW",
+  "lastChange": "2026-07-27T00:00:00Z",
+  "name": "Simple mock plastic broom",
+  "version": "01.00.000"
+}

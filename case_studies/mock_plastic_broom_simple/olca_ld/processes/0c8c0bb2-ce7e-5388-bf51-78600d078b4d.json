@@ -1,0 +1,95 @@
+{
+  "@type": "Process",
+  "@id": "0c8c0bb2-ce7e-5388-bf51-78600d078b4d",
+  "category": "Mock examples/processes",
+  "description": "Simple foreground process consuming two activities from the tiny mock background. Fictional data for cross-engine tests only.",
+  "exchanges": [
+    {
+      "amount": 1.0,
+      "flow": {
+        "@type": "Flow",
+        "@id": "e991b4c6-28ef-514b-82a8-69f22d08ab67",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Simple mock plastic broom"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "01846770-4cfe-4a25-8ad9-919d8d378345",
+        "name": "Number of items"
+      },
+      "internalId": 1,
+      "isInput": false,
+      "isQuantitativeReference": true,
+      "unit": {
+        "@type": "Unit",
+        "@id": "6dabe201-aaac-4509-92f0-d00c26cb72ab",
+        "name": "unit"
+      }
+    },
+    {
+      "amount": 0.52,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "520d2ab7-4126-512d-9297-17c07fedc5b2",
+        "name": "Mock polypropylene granulate, at plant",
+        "processType": "UNIT_PROCESS"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "9fa6cdb3-da2e-5f4b-b4f8-7e3c34a3a0d1",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock polypropylene granulate"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "93a60a56-a3c8-11da-a746-0800200b9a66",
+        "name": "Mass"
+      },
+      "internalId": 2,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
+        "name": "kg"
+      }
+    },
+    {
+      "amount": 0.1055,
+      "defaultProvider": {
+        "@type": "Process",
+        "@id": "2f8f7ea1-d832-5b1d-a4db-9a5e80487ade",
+        "name": "Mock freight transport, small truck",
+        "processType": "UNIT_PROCESS"
+      },
+      "flow": {
+        "@type": "Flow",
+        "@id": "beb84703-3bfd-570e-874b-099dd66c5cd6",
+        "flowType": "PRODUCT_FLOW",
+        "name": "Mock freight transport"
+      },
+      "flowProperty": {
+        "@type": "FlowProperty",
+        "@id": "838aaa20-0117-11db-92e3-0800200c9a66",
+        "name": "Goods transport (mass*distance)"
+      },
+      "internalId": 3,
+      "isInput": true,
+      "isQuantitativeReference": false,
+      "unit": {
+        "@type": "Unit",
+        "@id": "0dea4ed8-bb6b-4049-b2b4-b2c413ef2180",
+        "name": "tkm"
+      }
+    }
+  ],
+  "lastChange": "2026-07-27T00:00:00Z",
+  "location": {
+    "@type": "Location",
+    "@id": "fca7720d-527b-5ef9-99ba-28368828b1b6",
+    "name": "Mock location"
+  },
+  "name": "Simple mock plastic broom assembly",
+  "processType": "UNIT_PROCESS",
+  "version": "01.00.000"
+}

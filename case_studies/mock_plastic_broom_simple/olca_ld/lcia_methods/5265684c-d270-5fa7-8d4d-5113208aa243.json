@@ -1,0 +1,20 @@
+{
+  "@type": "ImpactMethod",
+  "@id": "5265684c-d270-5fa7-8d4d-5113208aa243",
+  "description": "Two-category method for cross-engine plumbing tests only; not an official EF method and not suitable for environmental claims.",
+  "impactCategories": [
+    {
+      "@type": "ImpactCategory",
+      "@id": "0e099835-4f8f-5b44-9fb0-45bb7baecef8",
+      "name": "climate change | global warming potential (GWP100)"
+    },
+    {
+      "@type": "ImpactCategory",
+      "@id": "1e3a3b51-7650-521d-99bf-d286f4cdd42d",
+      "name": "acidification | accumulated exceedance (AE)"
+    }
+  ],
+  "lastChange": "2026-07-27T00:00:00Z",
+  "name": "Mock EF v3.1 subset",
+  "version": "01.00.000"
+}

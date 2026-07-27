@@ -1,0 +1,21 @@
+{
+  "reference_product": "Simple mock plastic broom",
+  "method_name": "Mock EF v3.1 subset",
+  "impact_category": "climate change | global warming potential (GWP100)",
+  "description": "Hand-computable simple mock background chain with grid electricity supplied only to polypropylene.",
+  "scaling_vector": {
+    "Mock grid electricity, medium voltage": 1.04,
+    "Mock polypropylene granulate, at plant": 0.52,
+    "Mock freight transport, small truck": 0.1055,
+    "Simple mock plastic broom assembly": 1.0
+  },
+  "inventory": {
+    "Carbon dioxide, fossil": 0.945495,
+    "Sulfur dioxide": 0.00058255
+  },
+  "impact_scores": {
+    "climate change | global warming potential (GWP100)": 0.945495,
+    "acidification | accumulated exceedance (AE)": 0.0007631405
+  },
+  "score": 0.945495
+}
