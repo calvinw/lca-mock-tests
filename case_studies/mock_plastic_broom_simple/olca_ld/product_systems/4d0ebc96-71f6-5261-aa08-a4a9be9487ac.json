@@ -203,8 +203,8 @@
             "amount": 0.1055,
             "defaultProvider": {
               "@type": "Process",
-              "@id": "2f8f7ea1-d832-5b1d-a4db-9a5e80487ade",
-              "name": "Mock freight transport, small truck",
+              "@id": "b6b7dcfa-13ea-569f-b459-9be90316e1a8",
+              "name": "Mock freight transport, small truck, direct emissions only",
               "processType": "UNIT_PROCESS"
             },
             "flow": {
@@ -315,8 +315,8 @@
             "amount": 0.1055,
             "defaultProvider": {
               "@type": "Process",
-              "@id": "2f8f7ea1-d832-5b1d-a4db-9a5e80487ade",
-              "name": "Mock freight transport, small truck",
+              "@id": "b6b7dcfa-13ea-569f-b459-9be90316e1a8",
+              "name": "Mock freight transport, small truck, direct emissions only",
               "processType": "UNIT_PROCESS"
             },
             "flow": {
@@ -352,8 +352,8 @@
       },
       "provider": {
         "@type": "Process",
-        "@id": "2f8f7ea1-d832-5b1d-a4db-9a5e80487ade",
-        "name": "Mock freight transport, small truck",
+        "@id": "b6b7dcfa-13ea-569f-b459-9be90316e1a8",
+        "name": "Mock freight transport, small truck, direct emissions only",
         "processType": "UNIT_PROCESS"
       }
     }
@@ -373,8 +373,8 @@
     },
     {
       "@type": "Process",
-      "@id": "2f8f7ea1-d832-5b1d-a4db-9a5e80487ade",
-      "name": "Mock freight transport, small truck",
+      "@id": "b6b7dcfa-13ea-569f-b459-9be90316e1a8",
+      "name": "Mock freight transport, small truck, direct emissions only",
       "processType": "UNIT_PROCESS"
     },
     {

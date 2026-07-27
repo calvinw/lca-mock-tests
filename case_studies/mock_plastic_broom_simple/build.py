@@ -189,10 +189,13 @@ resin = o.Process(
 )
 
 truck = o.Process(
-    id=uid("process:mock-small-truck"),
+    id=uid("process:mock-small-truck-direct"),
     last_change=LAST_CHANGE,
-    name="Mock freight transport, small truck",
-    description="Fictional unit process for cross-engine tests only.",
+    name="Mock freight transport, small truck, direct emissions only",
+    description=(
+        "Fictional leaf unit process with direct emissions and no "
+        "technosphere inputs. For cross-engine tests only."
+    ),
     category="Mock background/processes",
     process_type=o.ProcessType.UNIT_PROCESS,
     location=mock_location_ref,

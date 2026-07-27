@@ -6,7 +6,7 @@
   "scaling_vector": {
     "Mock grid electricity, medium voltage": 1.04,
     "Mock polypropylene granulate, at plant": 0.52,
-    "Mock freight transport, small truck": 0.1055,
+    "Mock freight transport, small truck, direct emissions only": 0.1055,
     "Simple mock plastic broom assembly": 1.0
   },
   "inventory": {

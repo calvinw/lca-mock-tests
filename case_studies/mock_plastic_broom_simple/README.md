@@ -1,10 +1,11 @@
 # Simple mock plastic broom with one grid-electricity link
 
-This fixture is a simplified variant of `mock_plastic_broom`. It contains the
-same four fictional unit processes, but grid electricity is consumed only by
-polypropylene production. Freight has direct emissions and no electricity
-input. The bundled product system is ready to calculate after importing the
-generated JSON-LD ZIP into openLCA.
+This fixture is a simplified variant of `mock_plastic_broom`. It mirrors the
+canonical `mock_background` version 2 activities used by the LCA MCP engine:
+grid electricity is consumed only by polypropylene production, while `Mock
+freight transport, small truck, direct emissions only` is a leaf activity with
+no technosphere inputs. The bundled product system is ready to calculate after
+importing the generated JSON-LD ZIP into openLCA.
 
 The inventory and method are intentionally synthetic. They test linking,
 scaling, inventory aggregation, LCIA, and API plumbing; they must not be used
@@ -15,12 +16,13 @@ for environmental claims.
 ```text
 Simple mock plastic broom assembly = 1.0
 Mock polypropylene                = 1.0 × 0.52 = 0.52 kg
-Mock freight transport            = 1.0 × 0.1055 = 0.1055 tkm
+Mock direct-only freight           = 1.0 × 0.1055 = 0.1055 tkm
 Mock grid electricity             = 0.52 × 2.0 = 1.04 kWh
 ```
 
 The grid supplies only `Mock polypropylene granulate, at plant`; there is no
-grid-electricity exchange on freight or broom assembly.
+grid-electricity exchange on `Mock freight transport, small truck, direct
+emissions only` or broom assembly.
 
 ## Inventory
 

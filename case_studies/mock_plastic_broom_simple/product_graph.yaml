@@ -16,7 +16,7 @@ processes:
     reference_output: { flow: Simple mock plastic broom, amount: 1.0, unit: unit }
     inputs:
       - { flow: "Mock polypropylene granulate, at plant", location: MOCK, database: mock_background, amount: 0.52, unit: kilogram }
-      - { flow: "Mock freight transport, small truck", location: MOCK, database: mock_background, amount: 0.1055, unit: ton kilometer }
+      - { flow: "Mock freight transport, small truck, direct emissions only", location: MOCK, database: mock_background, amount: 0.1055, unit: ton kilometer }
 
 reference_process: Simple mock plastic broom assembly
 
