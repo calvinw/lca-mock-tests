@@ -66,15 +66,15 @@ Goal: every push/PR automatically rebuilds every case study, imports it into
 a fresh Brightway project, runs the LCA, and fails the build if the result
 doesn't match `expected.json`.
 
-- [ ] Write a proper test runner (`tests/test_case_studies.py`, pytest-based)
+- [x] Write a proper test runner (`tests/test_case_studies.py`, pytest-based)
       that discovers every folder under `case_studies/`, runs its
       `build.py`, imports via `scripts/import_to_brightway.py`, and checks
       against `expected.json` via `scripts/run_check.py`'s logic (import
       the function directly rather than shelling out).
-- [ ] Add a GitHub Actions workflow (`.github/workflows/test.yml`) that
+- [x] Add a GitHub Actions workflow (`.github/workflows/test.yml`) that
       installs `olca-schema`, `bw2data`, `bw2calc`, `bw2io`, and runs the
       pytest suite on every push and PR.
-- [ ] Make sure the workflow fails loudly and specifically (which case
+- [x] Make sure the workflow fails loudly and specifically (which case
       study, which expected value, what was actually computed) — this
       suite's entire value is precise failure localization.
 
