@@ -125,3 +125,9 @@ using the `reference_product`/`method_name`/`impact_category` recorded there.
 The openLCA path remains independent and calculates through IPC. This is a
 manual step run via the Makefile, not yet wired into GitHub Actions CI — see
 roadmap Phase 1 in `PLAN.md`.
+
+## Git workflow
+
+Only maintainers (calvinw, elenachoi1) can push to `main`; they may commit
+to it directly. Everyone else works on a branch and opens a pull request
+with `gh pr create` for a maintainer to merge. Never force-push.
